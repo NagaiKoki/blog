@@ -10,13 +10,13 @@ export const Header: React.VFC = () => {
       <Heading
         as="h1"
         size="xl"
-        fontWeight="bold"
+        fontWeight="extrabold"
         colorScheme="whiteAlpha"
         fontFamily="heading"
       >
-        Koky Articles
+        Koky Blogs
       </Heading>
-      <Switch size="lg" onChange={toggleColorMode} />
+      <Switch size="lg" onChange={toggleColorMode} colorScheme="yellow" />
       <style jsx>{`
         header {
           display: flex;
