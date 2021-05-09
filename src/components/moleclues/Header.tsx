@@ -7,7 +7,13 @@ export const Header: React.VFC = () => {
 
   return (
     <header>
-      <Heading as="h1" size="xl" colorScheme="whiteAlpha">
+      <Heading
+        as="h1"
+        size="xl"
+        fontWeight="bold"
+        colorScheme="whiteAlpha"
+        fontFamily="heading"
+      >
         Koky Articles
       </Heading>
       <Switch size="lg" onChange={toggleColorMode} />
