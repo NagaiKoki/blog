@@ -1,0 +1,11 @@
+type Query {
+  posts: [Post]
+}
+
+type Post {
+  id: ID!
+  content: String!
+  status: Int!
+  createdAt: String!
+  updatedAt: String!
+}
