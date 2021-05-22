@@ -1,7 +1,11 @@
 import React from "react";
 import { Heading } from "@chakra-ui/react";
 
-export const BlogListItem: React.VFC = () => {
+type Props = {
+  title: string;
+};
+
+export const BlogListItem: React.VFC<Props> = ({ title }) => {
   return (
     <article>
       <Heading
@@ -10,7 +14,7 @@ export const BlogListItem: React.VFC = () => {
         fontSize="2xl"
         textColor="orange.400"
       >
-        メモ化について
+        {title}
       </Heading>
     </article>
   );

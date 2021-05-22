@@ -4,6 +4,7 @@ type Query {
 
 type Post {
   id: ID!
+  title: String!
   content: String!
   status: Int!
   createdAt: String!

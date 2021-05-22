@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Aside } from "components/moleclues/Aside";
 import { BlogList } from "components/organisms/BlogList";
 
