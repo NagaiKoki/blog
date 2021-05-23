@@ -1,5 +1,6 @@
 const express = require("express");
 const { ApolloServer, gql } = require("apollo-server-express");
+const { PrismaClient } = require("@prisma/client");
 const fs = require("fs");
 const path = require("path");
 const resolvers = require("./resolvers");
@@ -9,6 +10,8 @@ const gqlPath = "/graphql";
 
 const app = express();
 
+const prisma = new PrismaClient();
+
 const typeDefs = fs.readFileSync(
   path.join(__dirname, "schema.graphql"),
   "utf8"
@@ -17,6 +20,9 @@ const typeDefs = fs.readFileSync(
 let server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: {
+    prisma,
+  },
 });
 
 server.applyMiddleware({ app, gqlPath });

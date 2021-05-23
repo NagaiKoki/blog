@@ -10,9 +10,27 @@ const posts = [
 ];
 
 const Query = {
-  posts: () => posts,
+  posts: async (parent, args, context) => {
+    return context.prisma.post.findMany();
+  },
+};
+
+const Mutation = {
+  post: (parent, args, context, info) => {
+    const newPost = context.prisma.post.create({
+      data: {
+        title: args.title,
+        content: args.content,
+        status: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    });
+    return newPost;
+  },
 };
 
 module.exports = {
   Query,
+  Mutation,
 };

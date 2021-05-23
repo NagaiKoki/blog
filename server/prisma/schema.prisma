@@ -12,6 +12,7 @@ generator client {
 
 model Post {
   id Int @default(autoincrement()) @id
+  title String
   content String
   status Int
   createdAt DateTime @default(now())

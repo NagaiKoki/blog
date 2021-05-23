@@ -13,9 +13,9 @@ export const PostEditorPreview: React.FC<Props> = ({ content }) => {
       <style jsx>{`
         .Wrapper {
           width: 50%;
-          padding: 10px;
-          background: ${COLORS.WHITE};
-          color: ${COLORS.TEXT_COLOR};
+          padding: 15px;
+          background: ${COLORS.DARK_THEME_COLOR};
+          color: ${COLORS.WHITE};
         }
       `}</style>
     </div>
