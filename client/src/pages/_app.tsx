@@ -2,6 +2,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Header } from "components/moleclues/Header";
 import { httpLink } from "../config/graphql";
+import "styles/global.css";
 
 const MyApp = ({ Component, pageProps }) => {
   const client = new ApolloClient({
