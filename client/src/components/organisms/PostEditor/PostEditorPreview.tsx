@@ -1,6 +1,5 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
+import { MarkdownRenderer } from "components/atoms/Markdown/Renderer";
 import { COLORS } from "styles/index";
 
 type Props = {
@@ -10,7 +9,7 @@ type Props = {
 export const PostEditorPreview: React.FC<Props> = ({ content }) => {
   return (
     <div className="Wrapper">
-      <ReactMarkdown plugins={[gfm]}>{content}</ReactMarkdown>
+      <MarkdownRenderer text={content} />
       <style jsx>{`
         .Wrapper {
           width: 50%;
