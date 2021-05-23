@@ -40,3 +40,13 @@ p {
   font-weight: 300 !important;
   margin: 0;
 }
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bcbcbc;
+}
