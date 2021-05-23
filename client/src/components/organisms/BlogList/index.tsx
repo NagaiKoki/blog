@@ -23,7 +23,7 @@ export const BlogList: React.VFC = () => {
       {data.posts.map((item) => {
         return (
           <div key={item.id} className="Item__Wrapper">
-            <BlogListItem title={item.title} />
+            <BlogListItem id={item.id} title={item.title} />
           </div>
         );
       })}

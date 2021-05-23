@@ -1,17 +1,13 @@
-const posts = [
-  {
-    id: 1,
-    title: "パフォーマンス改善について",
-    content: "hogehoge",
-    status: 1,
-    createdAt: "2021/01/01",
-    updatedAt: "2021/01/01",
-  },
-];
-
 const Query = {
   posts: async (parent, args, context) => {
     return context.prisma.post.findMany();
+  },
+  post: async (parent, args, context) => {
+    return context.prisma.post.findUnique({
+      where: {
+        id: args.id,
+      },
+    });
   },
 };
 
