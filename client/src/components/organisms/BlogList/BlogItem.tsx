@@ -9,7 +9,7 @@ type Props = {
 
 export const BlogListItem: React.VFC<Props> = ({ id, title }) => {
   return (
-    <article>
+    <article className="Blog__Item">
       <Link href={`/posts/${id}`}>
         <Heading
           as="h3"
@@ -20,6 +20,14 @@ export const BlogListItem: React.VFC<Props> = ({ id, title }) => {
           {title}
         </Heading>
       </Link>
+      <style jsx>{`
+        .Blog__Item {
+          cursor: pointer;
+        }
+        .Blog__Item:hover {
+          opacity: 0.8;
+        }
+      `}</style>
     </article>
   );
 };

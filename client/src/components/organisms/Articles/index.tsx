@@ -1,25 +1,19 @@
 import React from "react";
-import { useRouter } from "next/router";
 import { useQuery, gql } from "@apollo/client";
 import { Heading } from "@chakra-ui/react";
+
 import { MarkdownRenderer } from "../../atoms/Markdown/Renderer";
 import { PostType } from "../../../types/post";
+import { GET_POST_QUERY } from "../../../graphql/post";
 
-const POSTS_QUERY = gql`
-  query GetPost($id: Int!) {
-    post(id: $id) {
-      id
-      title
-      content
-    }
-  }
-`;
+type Props = {
+  id: number;
+};
 
-export const Article = () => {
-  const { query } = useRouter();
-  const { data } = useQuery<{ post: PostType }>(POSTS_QUERY, {
+export const Article: React.FC<Props> = ({ id }) => {
+  const { data, loading } = useQuery<{ post: PostType }>(GET_POST_QUERY, {
     variables: {
-      id: 1,
+      id,
     },
   });
 
@@ -31,10 +25,12 @@ export const Article = () => {
     <header>
       <Heading
         as="h1"
-        size="xl"
+        size="2xl"
         fontWeight="extrabold"
         colorScheme="whiteAlpha"
         fontFamily="heading"
+        padding="30px 0 40px 0"
+        textColor="orange.400"
       >
         {title}
       </Heading>

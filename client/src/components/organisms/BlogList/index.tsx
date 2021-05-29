@@ -1,22 +1,18 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+
 import { BlogListItem } from "./BlogItem";
 import { PostsQueryType } from "../../../types/post";
-
-const BOOKS_QUERY = gql`
-  {
-    posts {
-      id
-      title
-      content
-    }
-  }
-`;
+import { GET_POSTS_QUERY } from "../../../graphql/post";
+import { EmptyState } from "components/atoms/EmptyState";
 
 export const BlogList: React.VFC = () => {
-  const { data } = useQuery<PostsQueryType | undefined>(BOOKS_QUERY);
+  const { data, loading } =
+    useQuery<PostsQueryType | undefined>(GET_POSTS_QUERY);
 
-  if (!data) return <></>;
+  if (!data && loading) {
+    return <EmptyState />;
+  }
 
   return (
     <div>

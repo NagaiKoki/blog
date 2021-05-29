@@ -21,7 +21,7 @@ const MyApp = ({ Component, pageProps }) => {
           .Container {
             margin-right: auto;
             margin-left: auto;
-            max-width: 42rem;
+            max-width: 45rem;
             padding: 2.625rem 1.3125rem;
           }
         `}</style>
