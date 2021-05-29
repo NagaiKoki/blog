@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 import { BlogListItem } from "./BlogItem";
 import { PostsQueryType } from "../../../types/post";
@@ -19,7 +19,11 @@ export const BlogList: React.VFC = () => {
       {data.posts.map((item) => {
         return (
           <div key={item.id} className="Item__Wrapper">
-            <BlogListItem id={item.id} title={item.title} />
+            <BlogListItem
+              id={item.id}
+              title={item.title}
+              createdAt={item.createAt}
+            />
           </div>
         );
       })}
