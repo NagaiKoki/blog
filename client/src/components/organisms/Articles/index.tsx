@@ -27,7 +27,7 @@ export const Article: React.FC<Props> = ({ id }) => {
       <header className="Header">
         <Heading
           as="h1"
-          size="2xl"
+          size="xl"
           fontWeight="extrabold"
           colorScheme="whiteAlpha"
           fontFamily="heading"

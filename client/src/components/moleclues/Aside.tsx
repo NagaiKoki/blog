@@ -14,8 +14,10 @@ export const Aside = () => {
         />
       </div>
       <div>
-        <Text fontSize="lg">Software Engineer</Text>
-        <Text fontSize="lg">
+        <Text fontSize="lg" fontWeight="bold">
+          Software Engineer
+        </Text>
+        <Text fontSize="md" paddingTop="10px">
           <Link
             href="https://github.com/NagaiKoki"
             textColor="orange.400"
@@ -24,7 +26,7 @@ export const Aside = () => {
             Github
           </Link>
         </Text>
-        <Text fontSize="lg">
+        <Text fontSize="md" paddingTop="5px">
           <Link
             href="https://twitter.com/0906koki"
             textColor="orange.400"

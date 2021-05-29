@@ -21,6 +21,7 @@ export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
           as="h3"
           fontWeight="extrabold"
           fontSize="2xl"
+          paddingBottom="7px"
           textColor="orange.400"
         >
           {title}
@@ -36,7 +37,6 @@ export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
         }
         .Timestamp {
           font-size: 14px;
-          padding-top: 5px;
         }
       `}</style>
     </article>
