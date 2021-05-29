@@ -22,7 +22,7 @@ export const BlogList: React.VFC = () => {
             <BlogListItem
               id={item.id}
               title={item.title}
-              createdAt={item.createAt}
+              createdAt={item.createdAt}
             />
           </div>
         );

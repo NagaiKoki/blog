@@ -20,7 +20,7 @@ export const Article: React.FC<Props> = ({ id }) => {
 
   if (!data) return <></>;
 
-  const { title, content, createAt } = data.post;
+  const { title, content, createdAt } = data.post;
 
   return (
     <div>
@@ -36,7 +36,7 @@ export const Article: React.FC<Props> = ({ id }) => {
         >
           {title}
         </Heading>
-        <time className="Timestamp">{formatDate(createAt)}</time>
+        <time className="Timestamp">{formatDate(createdAt)}</time>
       </header>
       <div>
         <MarkdownRenderer text={content} />

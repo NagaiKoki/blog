@@ -6,5 +6,5 @@ export type PostType = {
   id: number;
   title: string;
   content: string;
-  createAt: string;
+  createdAt: string;
 };

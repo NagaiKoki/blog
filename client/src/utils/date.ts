@@ -4,6 +4,7 @@ export const formatDate = (
   date: string | number,
   format = "YYYY/MM/DD"
 ): string => {
-  const strDate = dayjs(date).format(format);
+  const day = new Date(Number(date) * 1000);
+  const strDate = dayjs().format(format);
   return strDate;
 };
