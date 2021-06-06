@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/merriweather": "^4.4.5",
     "@types/react-syntax-highlighter": "^13.5.0",
     "dayjs": "^1.10.5",
     "framer-motion": "^4",

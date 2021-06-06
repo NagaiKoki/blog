@@ -14,8 +14,6 @@ type Props = {
 export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
   const date = formatDate(createdAt);
 
-  console.log(createdAt);
-
   return (
     <article className="Blog__Item">
       <Link href={`/posts/${id}`}>

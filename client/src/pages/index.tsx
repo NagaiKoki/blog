@@ -7,10 +7,15 @@ export default function Home() {
       <div className="Aside__Wrapper">
         <Aside />
       </div>
-      <BlogList />
+      <div className="List__Wrapper">
+        <BlogList />
+      </div>
       <style jsx>{`
         .Aside__Wrapper {
           margin-top: 50px;
+        }
+        .List__Wrapper {
+          padding-top: 40px;
         }
       `}</style>
     </main>

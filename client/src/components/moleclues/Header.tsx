@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Heading, Switch } from "@chakra-ui/react";
 
+import { TITLE } from "../../constants/title";
+
 export const Header: React.VFC = () => {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const { pathname } = useRouter();
 
   return (
@@ -20,10 +22,21 @@ export const Header: React.VFC = () => {
           style={{ cursor: "pointer" }}
           className="Koky__Header"
         >
-          Koky Blogs
+          {TITLE}
         </Heading>
       </Link>
-      <Switch size="lg" onChange={toggleColorMode} colorScheme="yellow" />
+      <Switch
+        size="lg"
+        onChange={toggleColorMode}
+        colorScheme="yellow"
+        title="dd"
+        display="flex"
+        alignItems="center"
+      >
+        <Heading as="span" size="lg" paddingLeft="5px">
+          {colorMode === "dark" ? "🌘" : "🌞"}
+        </Heading>
+      </Switch>
       <style jsx>{`
         header {
           display: flex;

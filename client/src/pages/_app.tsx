@@ -1,16 +1,21 @@
 import { ApolloProvider } from "@apollo/client";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Header } from "components/moleclues/Header";
-import { client } from "../config/graphql";
 import "styles/global.css";
+import "@fontsource/merriweather";
+
+import { client } from "../config/graphql";
+import theme from "../config/theme";
+import { Header } from "components/moleclues/Header";
+import { Footer } from "components/moleclues/Footer";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ApolloProvider client={client}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <div className="Container">
           <Header />
           <Component {...pageProps} />
+          <Footer />
         </div>
         <style jsx>{`
           .Container {

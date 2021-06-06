@@ -5,6 +5,12 @@ const config = {
   useSystemColorMode: true,
 };
 
-const theme = extendTheme({ config });
+const theme = extendTheme({
+  config,
+  fonts: {
+    heading: "Merriweather",
+    body: "Merriweather",
+  },
+});
 
 export default theme;
