@@ -10,7 +10,7 @@ export const BlogList: React.VFC = () => {
   const { data, loading } =
     useQuery<PostsQueryType | undefined>(GET_POSTS_QUERY);
 
-  if (!data && !loading) {
+  if (!data || loading) {
     return (
       <EmptyState
         emptyAmount={4}
