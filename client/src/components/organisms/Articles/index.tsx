@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Heading } from "@chakra-ui/react";
 
 import { MarkdownRenderer } from "../../atoms/Markdown/Renderer";
@@ -12,15 +12,15 @@ type Props = {
 };
 
 export const Article: React.FC<Props> = ({ id }) => {
-  const { data } = useQuery<{ post: PostType }>(GET_POST_QUERY, {
+  const { data } = useQuery<{ posts: PostType[] }>(GET_POST_QUERY, {
     variables: {
       id,
     },
   });
 
-  if (!data) return <></>;
+  if (!data || !data?.posts?.length) return <></>;
 
-  const { title, content, createdAt } = data.post;
+  const { title, content, createdAt } = data.posts[0];
 
   return (
     <div>

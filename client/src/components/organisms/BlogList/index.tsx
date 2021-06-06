@@ -14,6 +14,8 @@ export const BlogList: React.VFC = () => {
     return <EmptyState />;
   }
 
+  console.log(data);
+
   return (
     <div>
       {data.posts.map((item) => {

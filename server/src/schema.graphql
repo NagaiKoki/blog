@@ -1,6 +1,6 @@
 type Query {
   posts: [Post]
-  post(id: Int): Post
+  posts(where: {id: {_eq: Int): Post
 }
 
 type Mutation {

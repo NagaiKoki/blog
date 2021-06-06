@@ -6,14 +6,13 @@ export const GET_POSTS_QUERY = gql`
       id
       title
       content
-      createdAt
     }
   }
 `;
 
 export const GET_POST_QUERY = gql`
   query GetPost($id: Int!) {
-    post(id: $id) {
+    posts(where: { id: { _eq: $id } }) {
       id
       title
       content

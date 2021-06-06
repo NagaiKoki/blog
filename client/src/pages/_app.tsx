@@ -1,15 +1,10 @@
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Header } from "components/moleclues/Header";
-import { httpLink } from "../config/graphql";
+import { client } from "../config/graphql";
 import "styles/global.css";
 
 const MyApp = ({ Component, pageProps }) => {
-  const client = new ApolloClient({
-    link: httpLink,
-    cache: new InMemoryCache(),
-  });
-
   return (
     <ApolloProvider client={client}>
       <ChakraProvider>

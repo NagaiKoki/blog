@@ -13,11 +13,8 @@ type RequestPostMutation = {
 
 const CREATE_POST_MUTATION = gql`
   mutation PostMutation($title: String!, $content: String!) {
-    post(title: $title, content: $content) {
-      id
-      title
-      content
-      createdAt
+    insert_posts(objects: { title: $title, content: $content }) {
+      affected_rows
     }
   }
 `;
