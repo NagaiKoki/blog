@@ -1,5 +1,4 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
 
 const httpLinkUri = (): string => {
   const env = process.env.NODE_ENV;
@@ -15,7 +14,7 @@ const httpLinkUri = (): string => {
 export const httpLink = createHttpLink({
   uri: httpLinkUri(),
   headers: {
-    "x-hasura-admin-secret": "f2oxCUSW5enzIiJFtoKXFf5zHYLFjMcxNSYbhV7Z6HXO3fxF3nm8Ye85BUIex0KX",
+    "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_SECRET_KEY,
   },
 });
 
