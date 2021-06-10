@@ -6,11 +6,14 @@ import { PostsQueryType } from "../../../types/post";
 import { GET_POSTS_QUERY } from "../../../graphql/post";
 import { EmptyState } from "components/atoms/EmptyState";
 
-export const BlogList: React.VFC = () => {
-  const { data, loading } =
-    useQuery<PostsQueryType | undefined>(GET_POSTS_QUERY);
+type Props = {
+  data: PostsQueryType
+}
 
-  if (!data || loading) {
+export const BlogList: React.VFC<Props> = ({ data }) => {
+  const { posts, loading } = data.data
+
+  if (!posts?.length || loading) {
     return (
       <EmptyState
         emptyAmount={4}
@@ -23,7 +26,7 @@ export const BlogList: React.VFC = () => {
 
   return (
     <div>
-      {data.posts.map((item) => {
+      {posts.map((item) => {
         return (
           <div key={item.id} className="Item__Wrapper">
             <BlogListItem

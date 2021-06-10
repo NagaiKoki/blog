@@ -1,8 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { Heading } from "@chakra-ui/react";
+
 import { Article } from "components/organisms/Articles";
 import { Aside } from "components/moleclues/Aside";
-import { Heading } from "@chakra-ui/react";
 
 import { TITLE } from "../../constants/title";
 

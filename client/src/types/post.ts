@@ -1,5 +1,8 @@
 export type PostsQueryType = {
-  posts: PostType[];
+  data: {
+    posts: PostType[]
+    loading: boolean
+  }
 };
 
 export type PostType = {
