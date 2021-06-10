@@ -5,7 +5,8 @@ const httpLinkUri = (): string => {
   const env = process.env.NODE_ENV;
 
   switch (env) {
-    case "development": {
+    case "development":
+    case "production": {
       return "https://one-seahorse-56.hasura.app/v1/graphql";
     }
   }
