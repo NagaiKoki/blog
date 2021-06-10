@@ -14,7 +14,7 @@ const httpLinkUri = (): string => {
 export const httpLink = createHttpLink({
   uri: httpLinkUri(),
   headers: {
-    "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_SECRET_KEY,
+    "x-hasura-admin-secret": 'f2oxCUSW5enzIiJFtoKXFf5zHYLFjMcxNSYbhV7Z6HXO3fxF3nm8Ye85BUIex0KX',
   },
 });
 
