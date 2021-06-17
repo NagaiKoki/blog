@@ -1,0 +1,2 @@
+export const SWR_FETCH_POST_KEY = 'fetch/posts'
+export const SWR_CREATE_POST_KEY = 'fetch/posts'

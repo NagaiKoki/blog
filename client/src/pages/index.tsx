@@ -5,6 +5,8 @@ import { client } from '../config/graphql'
 import { PostsQueryType } from "../types/post";
 import { GET_POSTS_QUERY } from "../graphql/post";
 
+import { useGetPosts } from '../hooks/useGetPosts'
+
 
 export async function getStaticProps() {
   const { data, loading } = await client.query<PostsQueryType | undefined>({
@@ -20,6 +22,9 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: PostsQueryType) {
+  const { data } = useGetPosts()
+
+  console.log(data)
   if (!props.data) return <></>
 
   return (
