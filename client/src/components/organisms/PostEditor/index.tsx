@@ -41,7 +41,7 @@ export const PostEditor = () => {
           <PostEditorTitleInput title={title} onChange={setTitle} />
         </div>
         <Button colorScheme="yellow" size="md" onClick={handleCreatePost}>
-          送信
+          送信する
         </Button>
       </div>
       <div className="Wrapper">
