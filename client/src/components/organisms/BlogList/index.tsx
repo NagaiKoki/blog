@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Box } from "@chakra-ui/react";
 import { BlogListItem } from "./BlogItem";
 import { PostType } from "../../../types/post";
 import { EmptyState } from "components/atoms/EmptyState";
@@ -25,20 +26,15 @@ export const BlogList: React.VFC<Props> = ({ posts }) => {
       {posts.map((item) => {
         console.log(item.createdAt);
         return (
-          <div key={item.id} className="Item__Wrapper">
+          <Box key={item.id} marginTop="12">
             <BlogListItem
               id={item.id}
               title={item.title}
               createdAt={item.createdAt}
             />
-          </div>
+          </Box>
         );
       })}
-      <style jsx>{`
-        .Item__Wrapper {
-          margin-top: 60px;
-        }
-      `}</style>
     </div>
   );
 };

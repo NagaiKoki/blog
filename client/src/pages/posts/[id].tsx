@@ -1,10 +1,11 @@
 import React from "react";
-import { useRouter } from "next/router";
 import { Heading } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 import { Article } from "components/organisms/Articles";
 import { Aside } from "components/moleclues/Aside";
-import { PostType, PostQueryType } from "../../types/post";
+import { useGetPost } from "../../hooks/useGetPost";
+import { PostQueryType } from "../../types/post";
 import { fetchPosts } from "../../lib/apis/fetchPosts";
 import { fetchPost } from "../../lib/apis/fetchPost";
 import { TITLE } from "../../constants/title";
@@ -31,14 +32,17 @@ export async function getStaticProps({ params }) {
 }
 
 const PostShow = ({ data }: PostQueryType) => {
-  if (!data.id) {
+  const router = useRouter();
+  const { data: post } = useGetPost(String(router.query.id), data);
+
+  if (!post.id) {
     return <></>;
   }
 
   return (
     <main>
       <article>
-        <Article post={data} />
+        <Article post={post} />
       </article>
       <div className="Aside__Wrapper">
         <Heading as="h3" size="lg" colorScheme="whiteAlpha" marginBottom="3">

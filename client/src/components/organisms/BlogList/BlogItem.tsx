@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { Heading } from "@chakra-ui/react";
 
+import styles from "./BlogItem.module.css";
+
 type Props = {
   id: string;
   title: string;
@@ -10,7 +12,7 @@ type Props = {
 
 export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
   return (
-    <article className="Blog__Item">
+    <article className={styles.Blog__Item}>
       <Link href={`/posts/${id}`}>
         <Heading
           as="h3"
@@ -22,18 +24,7 @@ export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
           {title}
         </Heading>
       </Link>
-      <time className="Timestamp">{createdAt}</time>
-      <style jsx>{`
-        .Blog__Item {
-          cursor: pointer;
-        }
-        .Blog__Item:hover {
-          opacity: 0.8;
-        }
-        .Timestamp {
-          font-size: 14px;
-        }
-      `}</style>
+      <time className={styles.Timestamp}>{createdAt}</time>
     </article>
   );
 };

@@ -3,6 +3,7 @@ import { Heading } from "@chakra-ui/react";
 import { MarkdownRenderer } from "components/atoms/Markdown/Renderer";
 import { EmptyState } from "components/atoms/EmptyState";
 import { PostType } from "../../../types/post";
+import styles from "./articles.module.css";
 
 type Props = {
   post: PostType;
@@ -31,7 +32,7 @@ export const Article: React.FC<Props> = ({ post }) => {
 
   return (
     <div>
-      <header className="Header">
+      <header className={styles.Header}>
         <Heading
           as="h1"
           size="xl"
@@ -43,20 +44,11 @@ export const Article: React.FC<Props> = ({ post }) => {
         >
           {title}
         </Heading>
-        <time className="Timestamp">{createdAt}</time>
+        <time className={styles.Timestamp}>{createdAt}</time>
       </header>
       <div>
         <MarkdownRenderer text={content} />
       </div>
-      <style jsx>{`
-        .Header {
-          padding: 30px 0 40px 0;
-        }
-        .Timestamp {
-          padding-top: 10px;
-          font-size: 16px;
-        }
-      `}</style>
     </div>
   );
 };
