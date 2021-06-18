@@ -22,6 +22,7 @@ export const Aside = () => {
             <Link
               href="https://github.com/NagaiKoki"
               textColor="orange.400"
+              isExternal
               style={{ textDecoration: "underline" }}
             >
               Github
@@ -31,6 +32,7 @@ export const Aside = () => {
             <Link
               href="https://twitter.com/0906koki"
               textColor="orange.400"
+              isExternal
               style={{ textDecoration: "underline" }}
             >
               Twitter
