@@ -1,10 +1,8 @@
-import dayjs from "dayjs";
-
-export const formatDate = (
-  date: string | number,
-  format = "YYYY年MM月DD日"
-): string => {
-  const day = new Date(Number(date) * 1000);
-  const strDate = dayjs().format(format);
-  return strDate;
+export const formatDate = (date: Date): string => {
+  const dt = date;
+  const y = dt.getFullYear();
+  const m = ("00" + (dt.getMonth() + 1)).slice(-2);
+  const d = ("00" + dt.getDate()).slice(-2);
+  const result = y + "/" + m + "/" + d;
+  return result;
 };

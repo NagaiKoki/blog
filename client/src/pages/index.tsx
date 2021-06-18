@@ -1,31 +1,24 @@
 import { Aside } from "components/moleclues/Aside";
 import { BlogList } from "components/organisms/BlogList";
 
-import { client } from '../config/graphql'
+import { fetchPosts } from "../lib/apis/fetchPosts";
+import { useGetPosts } from "../hooks/useGetPosts";
 import { PostsQueryType } from "../types/post";
-import { GET_POSTS_QUERY } from "../graphql/post";
-
-import { useGetPosts } from '../hooks/useGetPosts'
-
 
 export async function getStaticProps() {
-  const { data, loading } = await client.query<PostsQueryType | undefined>({
-    query: GET_POSTS_QUERY
-  })
+  const payload = await fetchPosts();
 
   return {
     props: {
-      data: data,
-      loading: loading
-    }
-  }
+      data: payload,
+    },
+  };
 }
 
 export default function Home(props: PostsQueryType) {
-  const { data } = useGetPosts()
+  const { data, isValidating } = useGetPosts(props.data);
 
-  console.log(data)
-  if (!props.data) return <></>
+  if (!data) return <></>;
 
   return (
     <main>
@@ -33,7 +26,7 @@ export default function Home(props: PostsQueryType) {
         <Aside />
       </div>
       <div className="List__Wrapper">
-        <BlogList data={props} />
+        <BlogList posts={data} />
       </div>
       <style jsx>{`
         .Aside__Wrapper {

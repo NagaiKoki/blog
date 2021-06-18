@@ -4,20 +4,41 @@ import { Heading } from "@chakra-ui/react";
 
 import { Article } from "components/organisms/Articles";
 import { Aside } from "components/moleclues/Aside";
-
+import { PostType, PostQueryType } from "../../types/post";
+import { fetchPosts } from "../../lib/apis/fetchPosts";
+import { fetchPost } from "../../lib/apis/fetchPost";
 import { TITLE } from "../../constants/title";
 
-const PostShow = () => {
-  const { query } = useRouter();
+export const getStaticPaths = async () => {
+  const payload = await fetchPosts();
+  const paths = payload.map((post) => ({
+    params: {
+      id: post.id,
+    },
+  }));
+  return { paths, fallback: false };
+};
 
-  if (!query.id) {
+export async function getStaticProps({ params }) {
+  const id = params.id;
+  const payload = await fetchPost(id);
+
+  return {
+    props: {
+      data: payload,
+    },
+  };
+}
+
+const PostShow = ({ data }: PostQueryType) => {
+  if (!data.id) {
     return <></>;
   }
 
   return (
     <main>
       <article>
-        <Article id={Number(query.id)} />
+        <Article post={data} />
       </article>
       <div className="Aside__Wrapper">
         <Heading as="h3" size="lg" colorScheme="whiteAlpha" marginBottom="3">

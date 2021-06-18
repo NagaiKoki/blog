@@ -1,25 +1,15 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
 import { Heading } from "@chakra-ui/react";
-
 import { MarkdownRenderer } from "components/atoms/Markdown/Renderer";
 import { EmptyState } from "components/atoms/EmptyState";
 import { PostType } from "../../../types/post";
-import { GET_POST_QUERY } from "../../../graphql/post";
-import { formatDate } from "../../../utils/date";
 
 type Props = {
-  id: number;
+  post: PostType;
 };
 
-export const Article: React.FC<Props> = ({ id }) => {
-  const { data } = useQuery<{ posts: PostType[] }>(GET_POST_QUERY, {
-    variables: {
-      id,
-    },
-  });
-
-  if (!data || !data?.posts?.length) {
+export const Article: React.FC<Props> = ({ post }) => {
+  if (!post) {
     return (
       <div className="Empty__Wrapper">
         <EmptyState
@@ -37,7 +27,7 @@ export const Article: React.FC<Props> = ({ id }) => {
     );
   }
 
-  const { title, content, createdAt } = data.posts[0];
+  const { title, content, createdAt } = post;
 
   return (
     <div>
@@ -53,7 +43,7 @@ export const Article: React.FC<Props> = ({ id }) => {
         >
           {title}
         </Heading>
-        <time className="Timestamp">{formatDate(createdAt)}</time>
+        <time className="Timestamp">{createdAt}</time>
       </header>
       <div>
         <MarkdownRenderer text={content} />

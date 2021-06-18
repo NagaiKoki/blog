@@ -1,17 +1,18 @@
-import useSWR from 'swr'
+import useSWR from "swr";
 
-import { fetchPosts } from '../lib/apis/fetchPosts'
-import { SWR_FETCH_POST_KEY } from '../constants/swrKey'
+import { PostType } from "../types/post";
+import { fetchPosts } from "../lib/apis/fetchPosts";
+import { SWR_FETCH_POSTS_KEY } from "../constants/swrKey";
 
-export const useGetPosts = () => {
-  const { data, error, isValidating } = useSWR(SWR_FETCH_POST_KEY, fetchPosts, {
+export const useGetPosts = (initialData: PostType[]) => {
+  const { data, isValidating } = useSWR(SWR_FETCH_POSTS_KEY, fetchPosts, {
+    initialData: initialData,
     revalidateOnFocus: false,
-    revalidateOnReconnect: false
-  })
+    revalidateOnReconnect: false,
+  });
 
   return {
     data,
-    error,
-    isValidating
-  }
-}
+    isValidating,
+  };
+};

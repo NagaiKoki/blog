@@ -1,33 +1,38 @@
-import React, { useState } from "react";
-import { useMutation, gql } from "@apollo/client";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Button } from "@chakra-ui/react";
+
+import { PostStatusType } from "../../../types/common";
 import { PostEditorTitleInput } from "./PostEditorTitleInput";
 import { PostEditorTextarea } from "./PostEditorTextarea";
 import { PostEditorPreview } from "./PostEditorPreview";
+import { createPosts } from "../../../lib/apis/createPost";
 import { COLORS } from "styles/index";
-
-type RequestPostMutation = {
-  title: string;
-  content: string;
-};
-
-const CREATE_POST_MUTATION = gql`
-  mutation PostMutation($title: String!, $content: String!) {
-    insert_posts(objects: { title: $title, content: $content }) {
-      affected_rows
-    }
-  }
-`;
 
 export const PostEditor = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [createPost] = useMutation<RequestPostMutation>(CREATE_POST_MUTATION, {
-    variables: {
-      title: title,
-      content: content,
-    },
-  });
+  const [postStatus, setPostStatus] = useState<PostStatusType>("waiting");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (postStatus === "success") {
+      router.push("/");
+    }
+  }, [postStatus]);
+
+  const handleCreatePost = async () => {
+    setPostStatus("posting");
+    const { payload, error } = await createPosts({ title, content });
+    if (payload && !error) {
+      setPostStatus("success");
+    } else {
+      setPostStatus("failure");
+    }
+  };
+
+  console.log(postStatus);
 
   return (
     <div className="Container">
@@ -35,7 +40,7 @@ export const PostEditor = () => {
         <div className="Title__Wrapper">
           <PostEditorTitleInput title={title} onChange={setTitle} />
         </div>
-        <Button colorScheme="yellow" size="md" onClick={() => createPost()}>
+        <Button colorScheme="yellow" size="md" onClick={handleCreatePost}>
           送信
         </Button>
       </div>

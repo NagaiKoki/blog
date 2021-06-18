@@ -1,18 +1,33 @@
-import { db } from '../firebase'
+import { db } from "../firebase";
+import { format } from "date-fns";
+import { ResponsePostType, PostType } from "../../types/post";
 
 export const fetchPosts = async () => {
   try {
-    const posts = [];
-    await db.collection('posts').get().then(snap => {
-      snap.forEach(doc => {
-        const data = doc.data()
-        data.id = doc.ref.id
-        posts.push(data)
-      })
-    })
+    const posts: PostType[] = [];
+    await db
+      .collection("posts")
+      .get()
+      .then((snap) => {
+        snap.forEach((doc) => {
+          const data = doc.data() as ResponsePostType;
+          data.id = doc.ref.id;
+          const { id, title, content, status, createdAt, updatedAt } = data;
+          posts.push({
+            id,
+            title,
+            content,
+            status,
+            createdAt: format(createdAt.toDate(), "yyyy/MM/dd"),
+            updatedAt: format(updatedAt.toDate(), "yyyy/MM/dd"),
+          });
+        });
+      });
 
-    return { payload: posts }
-  } catch(e) {
-    return { error: e.message }
+    return posts;
+  } catch (e) {
+    const error = new Error("An error occurred while fetching the data.");
+    error.message = e.message;
+    throw error;
   }
-}
+};

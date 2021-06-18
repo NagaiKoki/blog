@@ -1,13 +1,15 @@
-import { mutate } from 'swr'
+import { useEffect } from "react";
 
-import { createPosts } from '../lib/apis/createPost'
-import { RequestPostType } from '../types/post'
-import { SWR_CREATE_POST_KEY } from '../constants/swrKey'
+import { createPosts } from "../lib/apis/createPost";
+import { PostStatusType } from "../types/common";
+import { RequestPostType } from "../types/post";
 
-export const useGetPosts = async (args: RequestPostType) => {
+export const useCreatePosts = async (args: RequestPostType) => {
   try {
-    await mutate(SWR_CREATE_POST_KEY, createPosts(args))
-  } catch(e) {
-    return { payload: 'error' }
+    const { payload, error } = await createPosts(args);
+    if (payload && !error) {
+    }
+  } catch (e) {
+    return { payload: "error" };
   }
-}
+};

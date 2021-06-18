@@ -1,19 +1,16 @@
 import React from "react";
-import dayjs from "dayjs";
 import Link from "next/link";
 import { Heading } from "@chakra-ui/react";
 
 import { formatDate } from "../../../utils/date";
 
 type Props = {
-  id: number;
+  id: string;
   title: string;
   createdAt: string;
 };
 
 export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
-  const date = formatDate(createdAt);
-
   return (
     <article className="Blog__Item">
       <Link href={`/posts/${id}`}>
@@ -27,7 +24,7 @@ export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
           {title}
         </Heading>
       </Link>
-      <time className="Timestamp">{date}</time>
+      <time className="Timestamp">{createdAt}</time>
       <style jsx>{`
         .Blog__Item {
           cursor: pointer;
