@@ -32,15 +32,18 @@ export const PostEditor = () => {
     }
   };
 
-  console.log(postStatus);
-
   return (
     <div className="Container">
       <div className="Nav__Wrapper">
         <div className="Title__Wrapper">
           <PostEditorTitleInput title={title} onChange={setTitle} />
         </div>
-        <Button colorScheme="yellow" size="md" onClick={handleCreatePost}>
+        <Button
+          colorScheme="yellow"
+          isLoading={postStatus === "posting"}
+          size="md"
+          onClick={handleCreatePost}
+        >
           送信する
         </Button>
       </div>

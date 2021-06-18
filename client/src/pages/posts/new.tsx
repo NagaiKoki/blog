@@ -11,7 +11,7 @@ const PostNew = () => {
     return (
       <div className="Container">
         <Flex justifyContent="center" marginTop={100}>
-          <Button onClick={() => signIn()}>
+          <Button onClick={() => signIn()} isLoading={loading}>
             Are you koki ? sign in here...
           </Button>
         </Flex>
