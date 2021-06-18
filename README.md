@@ -1,6 +1,8 @@
-ブログの終わりなき旅
+# Koky Tech Blog
 
 * Next.js(SSG)
 * SWR
 * Chakra
+* TypeScript
+* 
 * Firebase
