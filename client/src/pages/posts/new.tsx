@@ -1,7 +1,28 @@
 import React from "react";
+import { Button, Flex } from "@chakra-ui/react";
+import { signIn, useSession } from "next-auth/client";
+
 import { PostEditor } from "components/organisms/PostEditor";
 
 const PostNew = () => {
+  const [session, loading] = useSession();
+
+  if (!session) {
+    return (
+      <div className="Container">
+        <Flex justifyContent="center" marginTop={100}>
+          <Button onClick={() => signIn()}>
+            Are you koki ? sign in here...
+          </Button>
+        </Flex>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return <></>;
+  }
+
   return (
     <div className="Container">
       <div className="Editor__Wrapper">
