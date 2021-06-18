@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { Heading } from "@chakra-ui/react";
 
-import { formatDate } from "../../../utils/date";
-
 type Props = {
   id: string;
   title: string;

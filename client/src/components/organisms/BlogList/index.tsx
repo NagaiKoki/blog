@@ -1,9 +1,7 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
 
 import { BlogListItem } from "./BlogItem";
 import { PostType } from "../../../types/post";
-import { GET_POSTS_QUERY } from "../../../graphql/post";
 import { EmptyState } from "components/atoms/EmptyState";
 
 type Props = {

@@ -16,7 +16,7 @@ export async function getStaticProps() {
 }
 
 export default function Home(props: PostsQueryType) {
-  const { data, isValidating } = useGetPosts(props.data);
+  const { data } = useGetPosts(props.data);
 
   if (!data) return <></>;
 
