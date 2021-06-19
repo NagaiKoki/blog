@@ -6,9 +6,9 @@ import { PostStatusType } from "types/common";
 import { createPosts } from "@lib/apis/createPost";
 import { COLORS } from "@styles/index";
 import { PostEditorTitleInput } from "./PostEditorTitleInput";
-import { PostEditorTextarea } from "./PostEditorTextarea";
+import PostEditorTextarea from "./PostEditorTextarea";
 import { PostEditorPreview } from "./PostEditorPreview";
-import { PostSpoilerInput } from "./PostSpoilerInput";
+import PostSpoilerInput from "./PostSpoilerInput";
 
 export const PostEditor = () => {
   const [title, setTitle] = useState("");

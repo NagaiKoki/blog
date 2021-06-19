@@ -6,18 +6,18 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-export const PostSpoilerInput: React.VFC<Props> = React.memo(
-  ({ value, onChange }) => {
-    return (
-      <Input
-        placeholder="ネタバレを入力..."
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        backgroundColor="white"
-        width="95%"
-        margin="0 auto"
-        color="blackAlpha.800"
-      />
-    );
-  }
-);
+const PostSpoilerInput: React.VFC<Props> = ({ value, onChange }) => {
+  return (
+    <Input
+      placeholder="ネタバレを入力..."
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      backgroundColor="white"
+      width="95%"
+      margin="0 auto"
+      color="blackAlpha.800"
+    />
+  );
+};
+
+export default React.memo(PostSpoilerInput);
