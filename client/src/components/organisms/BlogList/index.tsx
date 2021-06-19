@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Box } from "@chakra-ui/react";
+import { PostType } from "types/post";
+import { EmptyState } from "@components/atoms/EmptyState";
 import { BlogListItem } from "./BlogItem";
-import { PostType } from "../../../types/post";
-import { EmptyState } from "components/atoms/EmptyState";
 
 type Props = {
   posts: PostType[];

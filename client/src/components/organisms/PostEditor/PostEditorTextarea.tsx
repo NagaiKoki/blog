@@ -1,13 +1,13 @@
 import React from "react";
 // import styles
-import { COLORS } from "styles/index";
+import { COLORS } from "@styles/index";
 
 type Props = {
   value: string;
   onChange: (value: string) => void;
 };
 
-export const PostEditorTextarea: React.FC<Props> = ({ value, onChange }) => {
+const PostEditorTextarea: React.FC<Props> = ({ value, onChange }) => {
   return (
     <>
       <textarea
@@ -30,3 +30,5 @@ export const PostEditorTextarea: React.FC<Props> = ({ value, onChange }) => {
     </>
   );
 };
+
+export default React.memo(PostEditorTextarea);

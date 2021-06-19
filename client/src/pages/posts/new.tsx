@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Flex } from "@chakra-ui/react";
 import { signIn, useSession } from "next-auth/client";
 
-import { PostEditor } from "components/organisms/PostEditor";
+import { PostEditor } from "@components/organisms/PostEditor";
 
 const PostNew = () => {
   const [session, loading] = useSession();

@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Button } from "@chakra-ui/react";
+import { Box, Flex, Button } from "@chakra-ui/react";
 
-import { PostStatusType } from "../../../types/common";
+import { PostStatusType } from "types/common";
+import { createPosts } from "@lib/apis/createPost";
+import { COLORS } from "@styles/index";
 import { PostEditorTitleInput } from "./PostEditorTitleInput";
-import { PostEditorTextarea } from "./PostEditorTextarea";
+import PostEditorTextarea from "./PostEditorTextarea";
 import { PostEditorPreview } from "./PostEditorPreview";
-import { createPosts } from "../../../lib/apis/createPost";
-import { COLORS } from "styles/index";
+import PostSpoilerInput from "./PostSpoilerInput";
 
 export const PostEditor = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [spoiler, setSpoiler] = useState("");
   const [postStatus, setPostStatus] = useState<PostStatusType>("waiting");
 
   const router = useRouter();
@@ -20,11 +22,11 @@ export const PostEditor = () => {
     if (postStatus === "success") {
       router.push("/");
     }
-  }, [postStatus]);
+  }, [postStatus, router]);
 
   const handleCreatePost = async () => {
     setPostStatus("posting");
-    const { payload, error } = await createPosts({ title, content });
+    const { payload, error } = await createPosts({ title, content, spoiler });
     if (payload && !error) {
       setPostStatus("success");
     } else {
@@ -33,11 +35,11 @@ export const PostEditor = () => {
   };
 
   return (
-    <div className="Container">
-      <div className="Nav__Wrapper">
-        <div className="Title__Wrapper">
+    <Box>
+      <Flex alignItems="center" width="95%" marginY="20px" marginX="auto">
+        <Box width="100%" marginRight="10px">
           <PostEditorTitleInput title={title} onChange={setTitle} />
-        </div>
+        </Box>
         <Button
           colorScheme="yellow"
           isLoading={postStatus === "posting"}
@@ -46,32 +48,16 @@ export const PostEditor = () => {
         >
           送信する
         </Button>
-      </div>
-      <div className="Wrapper">
-        <div className="Textarea__Wrapper">
+      </Flex>
+      <Flex marginBottom="20px">
+        <PostSpoilerInput value={spoiler} onChange={setSpoiler} />
+      </Flex>
+      <Flex>
+        <Box borderLeft={`1px solid ${COLORS.GRAY_COLOR_1}`} width="50%">
           <PostEditorTextarea value={content} onChange={setContent} />
-        </div>
+        </Box>
         <PostEditorPreview content={content} />
-      </div>
-      <style jsx>{`
-        .Wrapper {
-          display: flex;
-        }
-        .Nav__Wrapper {
-          display: flex;
-          align-items: center;
-          width: 95%;
-          margin: 20px auto;
-        }
-        .Title__Wrapper {
-          width: 100%;
-          margin-right: 10px;
-        }
-        .Textarea__Wrapper {
-          width: 50%;
-          border-right: 1px solid ${COLORS.GRAY_COLOR_1};
-        }
-      `}</style>
-    </div>
+      </Flex>
+    </Box>
   );
 };

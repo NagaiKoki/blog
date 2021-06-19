@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Heading, Switch } from "@chakra-ui/react";
 
-import { TITLE } from "../../constants/title";
+import { TITLE } from "@constants/title";
 
 export const Header: React.VFC = () => {
   const { colorMode, toggleColorMode } = useColorMode();

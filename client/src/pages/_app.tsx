@@ -1,11 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "next-auth/client";
-import "styles/global.css";
 import "@fontsource/merriweather";
 
-import theme from "../config/theme";
-import { Header } from "components/moleclues/Header";
-import { Footer } from "components/moleclues/Footer";
+import theme from "@config/theme";
+import { Header } from "@components/moleclues/Header";
+import { Footer } from "@components/moleclues/Footer";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
