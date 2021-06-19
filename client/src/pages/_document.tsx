@@ -6,8 +6,14 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        
+        <Head>
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicons/kokiBlogFav.png"
+          />
+        </Head>
         <body>
           <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
           <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>

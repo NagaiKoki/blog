@@ -22,7 +22,7 @@ export const PostEditor = () => {
     if (postStatus === "success") {
       router.push("/");
     }
-  }, [postStatus]);
+  }, [postStatus, router]);
 
   const handleCreatePost = async () => {
     setPostStatus("posting");
