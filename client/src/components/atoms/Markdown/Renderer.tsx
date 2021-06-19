@@ -48,6 +48,7 @@ export const MarkdownRenderer: React.FC<Props> = ({ text }) => {
         .react-markdown p {
           margin: 0;
           font-size: 1rem !important;
+          line-height: 2;
         }
         .react-markdown ul {
           padding-left: 40px;

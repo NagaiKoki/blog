@@ -1,6 +1,6 @@
-import { db } from "../firebase";
+import { db } from "@lib/firebase";
 
-import { RequestPostType } from "../../types/post";
+import { RequestPostType } from "types/post";
 
 export const createPosts = async ({
   title,

@@ -1,6 +1,6 @@
-import { db } from "../firebase";
 import { format } from "date-fns";
-import { ResponsePostType, PostType } from "../../types/post";
+import { db } from "@lib/firebase";
+import { ResponsePostType, PostType } from "types/post";
 
 export const fetchPosts = async () => {
   try {

@@ -1,6 +1,6 @@
 import React from "react";
 // import styles
-import { COLORS } from "styles/index";
+import { COLORS } from "@styles/index";
 
 type Props = {
   value: string;

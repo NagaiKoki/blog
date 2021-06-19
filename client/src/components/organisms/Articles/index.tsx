@@ -1,8 +1,8 @@
 import React from "react";
 import { Heading } from "@chakra-ui/react";
-import { MarkdownRenderer } from "components/atoms/Markdown/Renderer";
-import { EmptyState } from "components/atoms/EmptyState";
-import { PostType } from "../../../types/post";
+import { MarkdownRenderer } from "@components/atoms/Markdown/Renderer";
+import { EmptyState } from "@components/atoms/EmptyState";
+import { PostType } from "types/post";
 import styles from "./articles.module.css";
 
 type Props = {

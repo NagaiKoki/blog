@@ -2,13 +2,13 @@ import React from "react";
 import { Heading } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
-import { Article } from "components/organisms/Articles";
-import { Aside } from "components/moleclues/Aside";
-import { useGetPost } from "../../hooks/useGetPost";
-import { PostQueryType } from "../../types/post";
-import { fetchPosts } from "../../lib/apis/fetchPosts";
-import { fetchPost } from "../../lib/apis/fetchPost";
-import { TITLE } from "../../constants/title";
+import { Article } from "@components/organisms/Articles";
+import { Aside } from "@components/moleclues/Aside";
+import { useGetPost } from "@hooks/useGetPost";
+import { PostQueryType } from "types/post";
+import { fetchPosts } from "@lib/apis/fetchPosts";
+import { fetchPost } from "@lib/apis/fetchPost";
+import { TITLE } from "@constants/title";
 
 export const getStaticPaths = async () => {
   const payload = await fetchPosts();

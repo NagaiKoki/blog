@@ -1,5 +1,4 @@
 import React from "react";
-import { COLORS } from "styles/index";
 import { Input } from "@chakra-ui/react";
 
 type Props = {
