@@ -12,12 +12,14 @@ export const fetchPosts = async () => {
         snap.forEach((doc) => {
           const data = doc.data() as ResponsePostType;
           data.id = doc.ref.id;
-          const { id, title, content, status, createdAt, updatedAt } = data;
+          const { id, title, content, status, spoiler, createdAt, updatedAt } =
+            data;
           posts.push({
             id,
             title,
             content,
             status,
+            spoiler,
             createdAt: format(createdAt.toDate(), "yyyy/MM/dd"),
             updatedAt: format(updatedAt.toDate(), "yyyy/MM/dd"),
           });

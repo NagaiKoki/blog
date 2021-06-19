@@ -12,6 +12,7 @@ export type PostQueryType = {
 
 export type RequestPostType = {
   title: string;
+  spoiler: string;
   content: string;
 };
 
@@ -20,6 +21,7 @@ export type PostType = {
   title: string;
   content: string;
   status: number;
+  spoiler: string;
   createdAt: string;
   updatedAt: string;
 };

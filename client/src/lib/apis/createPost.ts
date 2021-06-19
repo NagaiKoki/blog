@@ -2,12 +2,17 @@ import { db } from "../firebase";
 
 import { RequestPostType } from "../../types/post";
 
-export const createPosts = async ({ title, content }: RequestPostType) => {
+export const createPosts = async ({
+  title,
+  content,
+  spoiler,
+}: RequestPostType) => {
   try {
     db.collection("posts").add({
       title,
       content,
       status: 1,
+      spoiler,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
