@@ -1,6 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "next-auth/client";
-import "styles/global.css";
 import "@fontsource/merriweather";
 
 import theme from "@config/theme";
