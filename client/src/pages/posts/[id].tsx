@@ -2,6 +2,7 @@ import React from "react";
 import { Heading } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
+import { Seo } from "@components/template/Layout/Seo";
 import { Article } from "@components/organisms/Articles";
 import { Aside } from "@components/moleclues/Aside";
 import { useGetPost } from "@hooks/useGetPost";
@@ -41,6 +42,7 @@ const PostShow = ({ data }: PostQueryType) => {
 
   return (
     <main>
+      <Seo title={post.title} description={post.content.substr(0, 130)} />
       <article>
         <Article post={post} />
       </article>

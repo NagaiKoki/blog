@@ -1,3 +1,4 @@
+import { Seo } from "@components/template/Layout/Seo";
 import { Aside } from "@components/moleclues/Aside";
 import { BlogList } from "@components/organisms/BlogList";
 import { fetchPosts } from "@lib/apis/fetchPosts";
@@ -21,6 +22,7 @@ export default function Home(props: PostsQueryType) {
 
   return (
     <main>
+      <Seo />
       <div className="Aside__Wrapper">
         <Aside />
       </div>
