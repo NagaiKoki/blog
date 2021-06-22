@@ -1,26 +1,35 @@
 import React from "react";
 import { Button, Flex } from "@chakra-ui/react";
-import { signIn, useSession } from "next-auth/client";
 
 import { PostEditor } from "@components/organisms/PostEditor";
+import firebase from "@lib/firebase";
+import { useAuth } from "@hooks/useAuth";
 
 const PostNew = () => {
-  const [session, loading] = useSession();
+  const { currentUser } = useAuth();
 
-  if (!session) {
+  const handleLogin = async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    await firebase.auth().signInWithPopup(provider);
+  };
+
+  if (!currentUser) {
     return (
       <div className="Container">
         <Flex justifyContent="center" marginTop={100}>
-          <Button onClick={() => signIn()} isLoading={loading}>
-            Are you koki ? sign in here...
-          </Button>
+          <Button onClick={handleLogin}>Are you koki ? sign in here...</Button>
         </Flex>
       </div>
     );
-  }
-
-  if (loading) {
-    return <></>;
+  } else if (
+    !!currentUser &&
+    currentUser.uid !== process.env.NEXT_PUBLIC_ADMIN_ID
+  ) {
+    return (
+      <div>
+        <p>you are not koky.</p>
+      </div>
+    );
   }
 
   return (

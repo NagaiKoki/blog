@@ -1,14 +1,14 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { Provider } from "next-auth/client";
 import "@fontsource/merriweather";
 
 import theme from "@config/theme";
 import { Header } from "@components/moleclues/Header";
 import { Footer } from "@components/moleclues/Footer";
+import { AuthProvider } from "../context/authProvider";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Provider session={pageProps.session}>
+    <AuthProvider>
       <ChakraProvider theme={theme}>
         <div className="Container">
           <Header />
@@ -24,7 +24,7 @@ const MyApp = ({ Component, pageProps }) => {
           }
         `}</style>
       </ChakraProvider>
-    </Provider>
+    </AuthProvider>
   );
 };
 
