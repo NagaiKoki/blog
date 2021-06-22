@@ -6,7 +6,7 @@ type Props = {
   onChange: (value: string) => void;
 };
 
-export const PostEditorTitleInput: React.FC<Props> = ({ title, onChange }) => {
+const PostEditorTitleInput: React.FC<Props> = ({ title, onChange }) => {
   return (
     <div>
       <Input
@@ -19,3 +19,5 @@ export const PostEditorTitleInput: React.FC<Props> = ({ title, onChange }) => {
     </div>
   );
 };
+
+export default React.memo(PostEditorTitleInput);

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
 import { Box, Flex, Button } from "@chakra-ui/react";
 
 import { PostStatusType } from "types/common";
 import { createPosts } from "@lib/apis/createPost";
 import { COLORS } from "@styles/index";
-import { PostEditorTitleInput } from "./PostEditorTitleInput";
+import { postDataState } from "@state/atoms/post";
+import PostEditorTitleInput from "./PostEditorTitleInput";
 import PostEditorTextarea from "./PostEditorTextarea";
-import { PostEditorPreview } from "./PostEditorPreview";
+import PostEditorPreview from "./PostEditorPreview";
 import PostSpoilerInput from "./PostSpoilerInput";
 
 export const PostEditor = () => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [spoiler, setSpoiler] = useState("");
+  const [postData, setPostData] = useRecoilState(postDataState);
+  const { title, content, spoiler } = postData;
   const [postStatus, setPostStatus] = useState<PostStatusType>("waiting");
 
   const router = useRouter();
@@ -38,7 +39,14 @@ export const PostEditor = () => {
     <Box>
       <Flex alignItems="center" width="95%" marginY="20px" marginX="auto">
         <Box width="100%" marginRight="10px">
-          <PostEditorTitleInput title={title} onChange={setTitle} />
+          <PostEditorTitleInput
+            title={title}
+            onChange={(value) =>
+              setPostData((prev) => {
+                return { ...prev, title: value };
+              })
+            }
+          />
         </Box>
         <Button
           colorScheme="yellow"
@@ -50,11 +58,25 @@ export const PostEditor = () => {
         </Button>
       </Flex>
       <Flex marginBottom="20px">
-        <PostSpoilerInput value={spoiler} onChange={setSpoiler} />
+        <PostSpoilerInput
+          value={spoiler}
+          onChange={(value) =>
+            setPostData((prev) => {
+              return { ...prev, spoiler: value };
+            })
+          }
+        />
       </Flex>
       <Flex>
         <Box borderLeft={`1px solid ${COLORS.GRAY_COLOR_1}`} width="50%">
-          <PostEditorTextarea value={content} onChange={setContent} />
+          <PostEditorTextarea
+            value={content}
+            onChange={(value) =>
+              setPostData((prev) => {
+                return { ...prev, content: value };
+              })
+            }
+          />
         </Box>
         <PostEditorPreview content={content} />
       </Flex>

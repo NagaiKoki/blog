@@ -6,7 +6,7 @@ type Props = {
   content: string;
 };
 
-export const PostEditorPreview: React.FC<Props> = ({ content }) => {
+const PostEditorPreview: React.FC<Props> = ({ content }) => {
   return (
     <div className="Wrapper">
       <MarkdownRenderer text={content} />
@@ -21,3 +21,5 @@ export const PostEditorPreview: React.FC<Props> = ({ content }) => {
     </div>
   );
 };
+
+export default React.memo(PostEditorPreview);
