@@ -2,7 +2,7 @@
 My Personal blog based on following technology stacks.
 
 - Next.js(SSG)
-- recoil
+- Recoil
 - SWR
 - Chakra
 - TypeScript
