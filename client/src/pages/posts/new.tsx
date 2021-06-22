@@ -17,7 +17,7 @@ const PostNew = () => {
     return (
       <div className="Container">
         <Flex justifyContent="center" marginTop={100}>
-          <Button onClick={handleLogin}>Are you koki ? sign in here...</Button>
+          <Button onClick={handleLogin}>Are you koki ?? sign in here...</Button>
         </Flex>
       </div>
     );
