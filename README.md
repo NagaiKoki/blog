@@ -9,3 +9,7 @@ My Personal blog based on following technology stacks.
 - Firestore
 
 # Contributions Welcome!!
+```shell
+yarn install
+yarn dev
+```
