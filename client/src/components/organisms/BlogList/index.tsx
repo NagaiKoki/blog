@@ -24,13 +24,13 @@ export const BlogList: React.VFC<Props> = ({ posts }) => {
   return (
     <div>
       {posts.map((item) => {
-        console.log(item.createdAt);
         return (
           <Box key={item.id} marginTop="12">
             <BlogListItem
               id={item.id}
               title={item.title}
               createdAt={item.createdAt}
+              spoiler={item.spoiler}
             />
           </Box>
         );
