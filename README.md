@@ -7,3 +7,5 @@ My Personal blog based on following technology stacks.
 - Chakra
 - TypeScript
 - Firestore
+
+# Contributions Welcome!!
