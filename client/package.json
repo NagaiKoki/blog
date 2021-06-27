@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -p 3000 && lint",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.1",
@@ -32,6 +33,9 @@
     "@types/react": "^17.0.5",
     "eslint": "^7.29.0",
     "eslint-config-next": "^11.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
     "typescript": "^4.2.4"
   }
 }
