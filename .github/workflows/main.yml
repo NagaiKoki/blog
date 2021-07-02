@@ -3,7 +3,7 @@ name: Chromatic
 on:
   push:
     branches:
-      - main
+      - feature/storybook
   
 jobs:
   build:
@@ -16,5 +16,4 @@ jobs:
       - run: npm ci
       - uses: chromaui/action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
