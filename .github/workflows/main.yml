@@ -1,19 +1,19 @@
-name: Chromatic
+name: "Chromatic Deployment"
 
 on:
   push:
+    tags-ignore:
+      - "**"
     branches:
-      - feature/storybook
-  
+      - "**"
+
 jobs:
-  build:
+  deploy-storybook:
     runs-on: ubuntu-latest
-  
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - run: npm ci
+      - uses: actions/checkout@v1
+      - run: yarn
       - uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: ${{ secrets.CHROMAUI_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
