@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 type Props = {
   title?: string;
@@ -6,8 +6,8 @@ type Props = {
 };
 
 export const Seo: React.FC<Props> = ({ title, description }) => {
-  const TITLE = "Koky Tech";
-  const DEFAULT_DESCRIPTION = "mainly write about frontend dev matters";
+  const TITLE = 'Koky Tech';
+  const DEFAULT_DESCRIPTION = 'mainly write about frontend dev matters';
 
   return (
     <Head>

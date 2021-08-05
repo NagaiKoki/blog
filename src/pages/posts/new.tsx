@@ -1,10 +1,10 @@
-import React from "react";
-import { RecoilRoot } from "recoil";
-import { Button, Flex } from "@chakra-ui/react";
+import React from 'react';
+import { RecoilRoot } from 'recoil';
+import { Button, Flex } from '@chakra-ui/react';
 
-import { PostEditor } from "@components/organisms/PostEditor";
-import firebase from "@lib/firebase";
-import { useAuth } from "@hooks/useAuth";
+import { PostEditor } from '@components/organisms/PostEditor';
+import firebase from '@lib/firebase';
+import { useAuth } from '@hooks/useAuth';
 
 const PostNew = () => {
   const { currentUser } = useAuth();

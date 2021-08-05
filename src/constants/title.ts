@@ -1,1 +1,1 @@
-export const TITLE = "Koky Tech";
+export const TITLE = 'Koky Tech';

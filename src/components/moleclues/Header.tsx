@@ -1,10 +1,10 @@
-import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useColorMode } from "@chakra-ui/color-mode";
-import { Heading, Switch } from "@chakra-ui/react";
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useColorMode } from '@chakra-ui/color-mode';
+import { Heading, Switch } from '@chakra-ui/react';
 
-import { TITLE } from "@constants/title";
+import { TITLE } from '@constants/title';
 
 export const Header: React.VFC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -15,11 +15,11 @@ export const Header: React.VFC = () => {
       <Link href="/">
         <Heading
           as="h1"
-          size={pathname === "/posts/[id]" ? "lg" : "xl"}
+          size={pathname === '/posts/[id]' ? 'lg' : 'xl'}
           fontWeight="extrabold"
           colorScheme="whiteAlpha"
           fontFamily="heading"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
           className="Koky__Header"
         >
           {TITLE}
@@ -34,7 +34,7 @@ export const Header: React.VFC = () => {
         alignItems="center"
       >
         <Heading as="span" size="lg" paddingLeft="5px">
-          {colorMode === "dark" ? "🌘" : "🌞"}
+          {colorMode === 'dark' ? '🌘' : '🌞'}
         </Heading>
       </Switch>
       <style jsx>{`

@@ -1,6 +1,6 @@
-import React from "react";
-import { MarkdownRenderer } from "@components/atoms/Markdown/Renderer";
-import { COLORS } from "@styles/index";
+import React from 'react';
+import { MarkdownRenderer } from '@components/atoms/Markdown/Renderer';
+import { COLORS } from '@styles/index';
 
 type Props = {
   content: string;

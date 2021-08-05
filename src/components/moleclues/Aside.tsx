@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { Text, Link, Flex } from "@chakra-ui/react";
+import React from 'react';
+import Image from 'next/image';
+import { Text, Link, Flex } from '@chakra-ui/react';
 
 export const Aside = () => {
   return (
@@ -23,7 +23,7 @@ export const Aside = () => {
               href="https://github.com/NagaiKoki"
               textColor="orange.400"
               isExternal
-              style={{ textDecoration: "underline" }}
+              style={{ textDecoration: 'underline' }}
             >
               Github
             </Link>
@@ -33,7 +33,7 @@ export const Aside = () => {
               href="https://twitter.com/0906koki"
               textColor="orange.400"
               isExternal
-              style={{ textDecoration: "underline" }}
+              style={{ textDecoration: 'underline' }}
             >
               Twitter
             </Link>

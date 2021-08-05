@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { useRouter } from "next/router";
-import { Box, Flex, Button } from "@chakra-ui/react";
+import React, { useState, useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { useRouter } from 'next/router';
+import { Box, Flex, Button } from '@chakra-ui/react';
 
-import { PostStatusType } from "types/common";
-import { createPosts } from "@lib/apis/createPost";
-import { COLORS } from "@styles/index";
-import { postDataState } from "@state/atoms/post";
-import PostEditorTitleInput from "./PostEditorTitleInput";
-import PostEditorTextarea from "./PostEditorTextarea";
-import PostEditorPreview from "./PostEditorPreview";
-import PostSpoilerInput from "./PostSpoilerInput";
+import { PostStatusType } from 'types/common';
+import { createPosts } from '@lib/apis/createPost';
+import { COLORS } from '@styles/index';
+import { postDataState } from '@state/atoms/post';
+import PostEditorTitleInput from './PostEditorTitleInput';
+import PostEditorTextarea from './PostEditorTextarea';
+import PostEditorPreview from './PostEditorPreview';
+import PostSpoilerInput from './PostSpoilerInput';
 
 export const PostEditor = () => {
   const [postData, setPostData] = useRecoilState(postDataState);
   const { title, content, spoiler } = postData;
-  const [postStatus, setPostStatus] = useState<PostStatusType>("waiting");
+  const [postStatus, setPostStatus] = useState<PostStatusType>('waiting');
 
   const router = useRouter();
 
   useEffect(() => {
-    if (postStatus === "success") {
-      router.push("/");
+    if (postStatus === 'success') {
+      router.push('/');
     }
   }, [postStatus, router]);
 
   const handleCreatePost = async () => {
-    setPostStatus("posting");
+    setPostStatus('posting');
     const { payload, error } = await createPosts({ title, content, spoiler });
     if (payload && !error) {
-      setPostStatus("success");
+      setPostStatus('success');
     } else {
-      setPostStatus("failure");
+      setPostStatus('failure');
     }
   };
 
@@ -50,7 +50,7 @@ export const PostEditor = () => {
         </Box>
         <Button
           colorScheme="yellow"
-          isLoading={postStatus === "posting"}
+          isLoading={postStatus === 'posting'}
           size="md"
           onClick={handleCreatePost}
         >

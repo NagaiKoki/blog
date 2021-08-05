@@ -1,10 +1,10 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import "@fontsource/merriweather";
+import { ChakraProvider } from '@chakra-ui/react';
+import '@fontsource/merriweather';
 
-import theme from "@config/theme";
-import { Header } from "@components/moleclues/Header";
-import { Footer } from "@components/moleclues/Footer";
-import { AuthProvider } from "../context/AuthProvider";
+import theme from '@config/theme';
+import { Header } from '@components/moleclues/Header';
+import { Footer } from '@components/moleclues/Footer';
+import { AuthProvider } from '../context/AuthProvider';
 
 const MyApp = ({ Component, pageProps }) => {
   return (

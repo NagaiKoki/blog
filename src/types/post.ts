@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from 'firebase';
 
 export type FirestoreTimestamp = firebase.firestore.Timestamp;
 
@@ -26,7 +26,7 @@ export type PostType = {
   updatedAt: string;
 };
 
-export type ResponsePostType = Omit<PostType, "createdAt" | "updatedAt"> & {
+export type ResponsePostType = Omit<PostType, 'createdAt' | 'updatedAt'> & {
   createdAt: FirestoreTimestamp;
   updatedAt: FirestoreTimestamp;
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import ContentLoader from "react-content-loader";
+import React from 'react';
+import ContentLoader from 'react-content-loader';
 
 type Props = {
   emptyAmount: number;
@@ -12,7 +12,7 @@ export const EmptyState: React.VFC<Props> = ({
   emptyAmount,
   margin,
   wrapperHeight,
-  reactHeight,
+  reactHeight
 }) => {
   const renderRect = () => {
     let y = 0;
@@ -40,7 +40,7 @@ export const EmptyState: React.VFC<Props> = ({
       uniqueKey="empty"
       viewBox={`0 0 700 ${wrapperHeight}`}
       height={wrapperHeight}
-      width={"100%"}
+      width={'100%'}
       backgroundColor="#1a202cbf"
       foregroundColor="#282e39de"
     >

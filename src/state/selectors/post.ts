@@ -1,2 +1,2 @@
-import { selector } from "recoil";
-import { postDataState, postStatusState } from "../atoms/post";
+import { selector } from 'recoil';
+import { postDataState, postStatusState } from '../atoms/post';

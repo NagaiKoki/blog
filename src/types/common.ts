@@ -1,1 +1,1 @@
-export type PostStatusType = "success" | "failure" | "posting" | "waiting";
+export type PostStatusType = 'success' | 'failure' | 'posting' | 'waiting';

@@ -1,17 +1,17 @@
-import { Seo } from "@components/template/Layout/Seo";
-import { Aside } from "@components/moleclues/Aside";
-import { BlogList } from "@components/organisms/BlogList";
-import { fetchPosts } from "@lib/apis/fetchPosts";
-import { useGetPosts } from "@hooks/useGetPosts";
-import { PostsQueryType } from "types/post";
+import { Seo } from '@components/template/Layout/Seo';
+import { Aside } from '@components/moleclues/Aside';
+import { BlogList } from '@components/organisms/BlogList';
+import { fetchPosts } from '@lib/apis/fetchPosts';
+import { useGetPosts } from '@hooks/useGetPosts';
+import { PostsQueryType } from 'types/post';
 
 export async function getStaticProps() {
   const payload = await fetchPosts();
 
   return {
     props: {
-      data: payload,
-    },
+      data: payload
+    }
   };
 }
 

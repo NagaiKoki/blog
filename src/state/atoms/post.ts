@@ -1,5 +1,5 @@
-import { atom } from "recoil";
-import { PostStatusType } from "types/common";
+import { atom } from 'recoil';
+import { PostStatusType } from 'types/common';
 
 export type PostDataState = {
   title: string;
@@ -8,15 +8,15 @@ export type PostDataState = {
 };
 
 export const postDataState = atom<PostDataState>({
-  key: "postDataState",
+  key: 'postDataState',
   default: {
-    title: "",
-    content: "",
-    spoiler: "",
-  },
+    title: '',
+    content: '',
+    spoiler: ''
+  }
 });
 
 export const postStatusState = atom<PostStatusType>({
-  key: "postStatusState",
-  default: "waiting",
+  key: 'postStatusState',
+  default: 'waiting'
 });
