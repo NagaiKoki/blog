@@ -1,27 +1,23 @@
-import firebase from '../lib/firebase';
 import { FC, createContext, useEffect, useState } from 'react';
+import { supabase } from '@lib/supabase';
 
-type AuthContextType = {
-  currentUser: firebase.User | undefined;
-};
-
-export const AuthContext = createContext<AuthContextType>({
-  currentUser: undefined
+const AuthContext = createContext<{ isLoggedIn: boolean }>({
+  isLoggedIn: false
 });
 
 export const AuthProvider: FC = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState<firebase.User | undefined>(
-    undefined
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const fetch = async () => {
+    setIsLoggedIn(!!supabase.auth.session());
+  };
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      setCurrentUser(user);
-    });
+    fetch();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser }}>
+    <AuthContext.Provider value={{ isLoggedIn }}>
       {children}
     </AuthContext.Provider>
   );
