@@ -9,16 +9,20 @@ type Props = {
   title: string;
   titleError: string;
   content: string;
+  isPosting: boolean;
   onChangeTitle: (value: string) => void;
   onChangeContent: (value: string) => void;
+  onSubmit: () => void;
 };
 
 export const PostEditor: VFC<Props> = ({
   title,
   titleError,
   content,
+  isPosting,
   onChangeTitle,
-  onChangeContent
+  onChangeContent,
+  onSubmit
 }) => {
   const [isPreview, setIsPreview] = useState(false);
 
@@ -39,6 +43,15 @@ export const PostEditor: VFC<Props> = ({
           )}
         </Box>
         <Flex justifyContent="flex-end" marginTop="20px">
+          <Button
+            isLoading={isPosting}
+            loadingText="公開中..."
+            marginRight="10px"
+            colorScheme="orange"
+            onClick={onSubmit}
+          >
+            公開する
+          </Button>
           <Button onClick={() => setIsPreview(!isPreview)}>
             {isPreview ? '入力に戻る' : 'プレビュー'}
           </Button>
