@@ -1,6 +1,7 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
+
 import { MarkdownRenderer } from '@components/shared/Markdown/Renderer';
-import { COLORS } from '@styles/index';
 
 type Props = {
   content: string;
@@ -8,17 +9,9 @@ type Props = {
 
 const PostEditorPreview: React.FC<Props> = ({ content }) => {
   return (
-    <div className="Wrapper">
+    <Box paddingX="20px" height="100vh" backgroundColor="gray.800">
       <MarkdownRenderer text={content} />
-      <style jsx>{`
-        .Wrapper {
-          width: 50%;
-          padding: 15px;
-          background: ${COLORS.DARK_THEME_COLOR};
-          color: ${COLORS.WHITE};
-        }
-      `}</style>
-    </div>
+    </Box>
   );
 };
 

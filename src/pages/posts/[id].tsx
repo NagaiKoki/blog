@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Seo } from '@components/template/Layout/Seo';
 import { Article } from '@components/organisms/Articles';
-import { Aside } from '@components/moleclues/Aside';
+import { Aside } from '@components/layouts/Aside';
 import { useGetPost } from '@hooks/useGetPost';
 import { PostQueryType } from 'types/post';
 import { fetchPosts } from '@lib/apis/fetchPosts';

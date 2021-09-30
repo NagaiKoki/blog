@@ -41,5 +41,5 @@ export type ResultCodeType = ZodIssueCode;
 export type ResultContentType = {
   title: string;
   detail?: string;
-  code?: ResultContentType;
+  code?: ResultCodeType;
 };

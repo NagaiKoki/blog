@@ -8,8 +8,8 @@ export abstract class ValueObject<T> {
   }
 
   protected getResult<I>(
-    props: Pick<ResultConstructorType<T>, 'status' | 'contents'>
+    props: Pick<ResultConstructorType<I>, 'status' | 'contents'>
   ) {
-    return Result.create(props);
+    return Result.create<I>(props);
   }
 }

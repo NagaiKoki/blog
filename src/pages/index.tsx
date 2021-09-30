@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Seo } from '@components/template/Layout/Seo';
-import { Aside } from '@components/moleclues/Aside';
+import { Aside } from '@components/layouts/Aside';
 import { BlogList } from '@components/organisms/BlogList';
 import { fetchPosts } from '@lib/apis/fetchPosts';
 import { useGetPosts } from '@hooks/useGetPosts';
