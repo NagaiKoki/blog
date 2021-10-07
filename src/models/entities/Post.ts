@@ -1,21 +1,21 @@
 import { Entity } from '../shared';
 
-import {
-  PostTitle,
-  PostContent,
-  PostTitleProps,
-  PostContentProps
-} from '../values/Post';
+import { PostTitle, PostContent, PostDate } from '../values/Post';
 
 type EntityProps = {
   id?: number;
   title: PostTitle;
   content: PostContent;
+  createdAt: PostDate;
+  updatedAt: PostDate;
 };
 
 type FactoryProps = {
-  title: PostTitleProps;
-  content: PostContentProps;
+  id?: number;
+  title: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export class Post extends Entity<EntityProps> {
@@ -25,6 +25,14 @@ export class Post extends Entity<EntityProps> {
 
   public getContent() {
     return this.props.content;
+  }
+
+  public getCreatedAt() {
+    return this.props.createdAt;
+  }
+
+  public getUpdatedAt() {
+    return this.props.updatedAt;
   }
 
   public changeTitle(newTitle: string) {
@@ -45,13 +53,21 @@ export class Post extends Entity<EntityProps> {
 
   public static factory(props: FactoryProps) {
     const title = PostTitle.factory({
-      value: props.title.value
+      value: props.title
     });
 
     const content = PostContent.factory({
-      value: props.content.value
+      value: props.content
     });
 
-    return new Post({ title, content });
+    const createdAt = PostDate.factory({
+      value: props.createdAt
+    });
+
+    const updatedAt = PostDate.factory({
+      value: props.updatedAt
+    });
+
+    return new Post({ title, content, createdAt, updatedAt });
   }
 }

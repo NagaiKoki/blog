@@ -13,7 +13,12 @@ interface IResponse {
   onSubmit: () => void;
 }
 
-const post = Post.factory({ title: { value: '' }, content: { value: '' } });
+const post = Post.factory({
+  title: '',
+  content: '',
+  createdAt: '',
+  updatedAt: ''
+});
 
 export const useCreatePost = (): IResponse => {
   const [title, setTitle] = useState('');
@@ -46,6 +51,7 @@ export const useCreatePost = (): IResponse => {
   }, [isPosting]);
 
   const onChangeTitle = (value: string) => {
+    console.log(post.getTitle());
     post.changeTitle(value);
     const title = post.getTitle();
     setTitle(title.value);

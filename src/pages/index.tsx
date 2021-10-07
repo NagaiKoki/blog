@@ -2,22 +2,26 @@ import { useEffect } from 'react';
 import { Seo } from '@components/template/Layout/Seo';
 import { Aside } from '@components/layouts/Aside';
 import { BlogList } from '@components/organisms/BlogList';
-import { fetchPosts } from '@lib/apis/fetchPosts';
-import { useGetPosts } from '@hooks/useGetPosts';
 import { PostsQueryType } from 'types/post';
 
-// export async function getStaticProps() {
-//   const payload = await fetchPosts();
+import { PostRepository } from '@repositories/posts';
 
-//   return {
-//     props: {
-//       data: payload
-//     }
-//   };
-// }
+const repo = new PostRepository();
+
+export async function getStaticProps() {
+  const payload = await repo.fetchPosts();
+  return {
+    props: {
+      data: payload.map((data) => {
+        return {
+          title: data.getTitle()
+        };
+      })
+    }
+  };
+}
 
 export default function Home(props: PostsQueryType) {
-  // const { data } = useGetPosts(props.data)
   if (true) return <></>;
 
   return (

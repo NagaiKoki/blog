@@ -23,6 +23,8 @@
       "@config/*": ["src/config/*"],
       "@state/*": ["src/state/*"],
       "@models/*": ["src/models/*"],
+      "@gateways/*": ["src/gateways/*"],
+      "@repositories/*": ["src/repositories/*"],
       "types/*": ["src/types/*"]
     }
   },
