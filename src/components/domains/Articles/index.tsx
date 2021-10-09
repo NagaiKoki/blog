@@ -5,7 +5,6 @@ import { Heading } from '@chakra-ui/react';
 import { Post } from '@models/entities/Post';
 // components
 import { MarkdownRenderer } from '@components/shared/Markdown/Renderer';
-import { EmptyState } from '@components/atoms/EmptyState';
 // types
 import styles from './articles.module.css';
 
@@ -14,24 +13,6 @@ type Props = {
 };
 
 export const Article: React.FC<Props> = ({ post }) => {
-  if (!post) {
-    return (
-      <div className="Empty__Wrapper">
-        <EmptyState
-          emptyAmount={1}
-          margin={30}
-          wrapperHeight={1500}
-          reactHeight={1500}
-        />
-        <style jsx>{`
-          .Empty__Wrapper {
-            margin-top: 30px;
-          }
-        `}</style>
-      </div>
-    );
-  }
-
   return (
     <div>
       <header className={styles.Header}>

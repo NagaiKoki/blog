@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-import { Seo } from '@components/template/Layout/Seo';
+import { Seo } from '@components/layouts/Seo';
 import { Aside } from '@components/layouts/Aside';
-import { BlogList } from '@components/organisms/BlogList';
+import { BlogList } from '@components/domains/BlogList';
 import { PostsQueryType } from 'types/post';
-
 import { PostRepository } from '@repositories/posts';
 import { Post } from '@models/entities/Post';
 

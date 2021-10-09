@@ -7,8 +7,8 @@ import { Post } from '@models/entities/Post';
 // repositories
 import { PostRepository } from '@repositories/posts';
 // components
-import { Seo } from '@components/template/Layout/Seo';
-import { Article } from '@components/organisms/Articles';
+import { Seo } from '@components/layouts/Seo';
+import { Article } from '@components/domains/Articles';
 import { Aside } from '@components/layouts/Aside';
 // types
 import { PostQueryType } from 'types/post';
