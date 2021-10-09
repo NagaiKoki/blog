@@ -1,24 +1,28 @@
-import { Seo } from '@components/template/Layout/Seo';
-import { Aside } from '@components/moleclues/Aside';
-import { BlogList } from '@components/organisms/BlogList';
-import { fetchPosts } from '@lib/apis/fetchPosts';
-import { useGetPosts } from '@hooks/useGetPosts';
+import { Seo } from '@components/layouts/Seo';
+import { Aside } from '@components/layouts/Aside';
+import { BlogList } from '@components/domains/BlogList';
 import { PostsQueryType } from 'types/post';
+import { PostRepository } from '@repositories/posts';
+import { Post } from '@models/entities/Post';
+
+const repo = new PostRepository();
 
 export async function getStaticProps() {
-  const payload = await fetchPosts();
-
+  const payload = await repo.fetchPosts();
   return {
     props: {
-      data: payload
+      data: JSON.parse(JSON.stringify(payload))
     }
   };
 }
 
 export default function Home(props: PostsQueryType) {
-  const { data } = useGetPosts(props.data);
-
-  if (!data) return <></>;
+  const { data } = props;
+  const postEntities = data.map((post) => {
+    return Post.factory({
+      ...post
+    });
+  });
 
   return (
     <main>
@@ -27,7 +31,7 @@ export default function Home(props: PostsQueryType) {
         <Aside />
       </div>
       <div className="List__Wrapper">
-        <BlogList posts={data} />
+        <BlogList posts={postEntities} />
       </div>
       <style jsx>{`
         .Aside__Wrapper {
