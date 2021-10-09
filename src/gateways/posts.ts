@@ -5,7 +5,7 @@ export const fetchPosts = async () => {
   try {
     const { data, error } = await fetchGet<ResponsePostType, PostType>({
       tableName: 'posts',
-      options: { order: { column: 'created_at', ascending: true } }
+      options: { order: { column: 'created_at', ascending: false } }
     });
 
     return {
