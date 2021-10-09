@@ -1,4 +1,3 @@
-import * as zod from 'zod';
 import { ValueObject, ResultConstructorType } from '../../shared';
 
 export type PostContentProps = {

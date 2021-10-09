@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Seo } from '@components/layouts/Seo';
 import { Aside } from '@components/layouts/Aside';
 import { BlogList } from '@components/domains/BlogList';

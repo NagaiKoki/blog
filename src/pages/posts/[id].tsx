@@ -1,6 +1,5 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 
 // entities
 import { Post } from '@models/entities/Post';
