@@ -19,6 +19,10 @@ type FactoryProps = {
 };
 
 export class Post extends Entity<EntityProps> {
+  public getId() {
+    return this.props.id || this.uuid;
+  }
+
   public getTitle() {
     return this.props.title;
   }
@@ -68,6 +72,6 @@ export class Post extends Entity<EntityProps> {
       value: props.updatedAt
     });
 
-    return new Post({ title, content, createdAt, updatedAt });
+    return new Post({ id: props.id, title, content, createdAt, updatedAt });
   }
 }

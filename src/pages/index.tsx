@@ -5,6 +5,7 @@ import { BlogList } from '@components/organisms/BlogList';
 import { PostsQueryType } from 'types/post';
 
 import { PostRepository } from '@repositories/posts';
+import { Post } from '@models/entities/Post';
 
 const repo = new PostRepository();
 
@@ -12,17 +13,18 @@ export async function getStaticProps() {
   const payload = await repo.fetchPosts();
   return {
     props: {
-      data: payload.map((data) => {
-        return {
-          title: data.getTitle()
-        };
-      })
+      data: JSON.parse(JSON.stringify(payload))
     }
   };
 }
 
 export default function Home(props: PostsQueryType) {
-  if (true) return <></>;
+  const { data } = props;
+  const postEntities = data.map((post) => {
+    return Post.factory({
+      ...post
+    });
+  });
 
   return (
     <main>
@@ -31,7 +33,7 @@ export default function Home(props: PostsQueryType) {
         <Aside />
       </div>
       <div className="List__Wrapper">
-        <BlogList posts={data} />
+        <BlogList posts={postEntities} />
       </div>
       <style jsx>{`
         .Aside__Wrapper {

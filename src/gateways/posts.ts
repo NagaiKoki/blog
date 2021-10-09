@@ -16,3 +16,16 @@ export const fetchPosts = async () => {
     alert('エラーが発生しました。。');
   }
 };
+
+export const fetchPost = async (id: number): Promise<PostType> => {
+  try {
+    const { data, error } = await fetchGet<ResponsePostType, PostType>({
+      tableName: 'posts',
+      match: { id: String(id) }
+    });
+
+    return data[0];
+  } catch (e) {
+    return e;
+  }
+};

@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { Box } from '@chakra-ui/react';
-import { PostType } from 'types/post';
+import { Post } from '@models/entities/Post';
 import { EmptyState } from '@components/atoms/EmptyState';
 import { BlogListItem } from './BlogItem';
 
 type Props = {
-  posts: PostType[];
+  posts: Post[];
 };
 
 export const BlogList: React.VFC<Props> = ({ posts }) => {
@@ -25,12 +25,11 @@ export const BlogList: React.VFC<Props> = ({ posts }) => {
     <div>
       {posts.map((item) => {
         return (
-          <Box key={item.id} marginTop="12">
+          <Box key={item.getId()} marginTop="12">
             <BlogListItem
-              id={item.id}
-              title={item.title}
-              createdAt={item.createdAt}
-              spoiler={item.spoiler}
+              id={item.getId()}
+              title={item.getTitle().value}
+              createdAt={item.getCreatedAt().value}
             />
           </Box>
         );

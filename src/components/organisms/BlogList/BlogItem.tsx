@@ -5,18 +5,12 @@ import { Heading, Flex } from '@chakra-ui/react';
 import styles from './BlogItem.module.css';
 
 type Props = {
-  id: string;
+  id: string | number;
   title: string;
-  spoiler: string;
   createdAt: string;
 };
 
-export const BlogListItem: React.VFC<Props> = ({
-  id,
-  title,
-  spoiler,
-  createdAt
-}) => {
+export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
   return (
     <article className={styles.Blog__Item}>
       <Link href={`/posts/${id}`}>
@@ -32,9 +26,6 @@ export const BlogListItem: React.VFC<Props> = ({
         </Heading>
       </Link>
       <Flex flexDirection="column">
-        <Heading as="text" fontSize="md" marginY={3}>
-          {spoiler}
-        </Heading>
         <time className={styles.Timestamp}>{createdAt}</time>
       </Flex>
     </article>

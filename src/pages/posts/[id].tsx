@@ -2,20 +2,26 @@ import React from 'react';
 import { Heading } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
+// entities
+import { Post } from '@models/entities/Post';
+// repositories
+import { PostRepository } from '@repositories/posts';
+// components
 import { Seo } from '@components/template/Layout/Seo';
 import { Article } from '@components/organisms/Articles';
 import { Aside } from '@components/layouts/Aside';
-import { useGetPost } from '@hooks/useGetPost';
+// types
 import { PostQueryType } from 'types/post';
-import { fetchPosts } from '@lib/apis/fetchPosts';
-import { fetchPost } from '@lib/apis/fetchPost';
+// constants
 import { TITLE } from '@constants/title';
 
+const repo = new PostRepository();
+
 export const getStaticPaths = async () => {
-  const payload = await fetchPosts();
+  const payload = await repo.fetchPosts();
   const paths = payload.map((post) => ({
     params: {
-      id: post.id
+      id: String(post.id)
     }
   }));
   return { paths, fallback: false };
@@ -23,26 +29,21 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps({ params }) {
   const id = params.id;
-  const payload = await fetchPost(id);
+  const payload = await repo.fetchPost(id);
 
   return {
     props: {
-      data: payload
+      data: JSON.parse(JSON.stringify(payload))
     }
   };
 }
 
 const PostShow = ({ data }: PostQueryType) => {
-  const router = useRouter();
-  const { data: post } = useGetPost(String(router.query.id), data);
-
-  if (!post.id) {
-    return <></>;
-  }
+  const post = Post.factory(data);
 
   return (
     <main>
-      <Seo title={post.title} description={post.content.substr(0, 130)} />
+      <Seo title={data.title} description={data.content.substr(0, 130)} />
       <article>
         <Article post={post} />
       </article>

@@ -1,18 +1,19 @@
-import { fetchPosts } from '@gateways/posts';
-import { Post } from '@models/entities/Post';
+import { fetchPosts, fetchPost } from '@gateways/posts';
+import { PostType } from 'types/post';
 
 export class PostRepository {
-  async fetchPosts(): Promise<Post[]> {
+  async fetchPosts(): Promise<PostType[]> {
     const { posts, error } = await fetchPosts();
 
     if (!!posts.length) {
-      const postEntities = posts.map((post) => {
-        return Post.factory(post);
-      });
-
-      return postEntities;
+      return posts;
     } else {
       console.log(error);
     }
+  }
+
+  async fetchPost(id: number) {
+    const post = await fetchPost(id);
+    return post;
   }
 }

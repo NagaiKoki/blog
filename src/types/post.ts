@@ -1,7 +1,5 @@
-import { Post } from '@models/entities/Post';
-
 export type PostsQueryType = {
-  data: Post[];
+  data: PostType[];
 };
 
 export type PostQueryType = {

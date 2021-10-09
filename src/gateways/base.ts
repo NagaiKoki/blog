@@ -5,6 +5,7 @@ import { TableName } from './Table';
 
 type FetchGetType<T> = {
   tableName: TableName;
+  match?: Record<string, string>;
   options?: {
     order?: {
       column: keyof T;
@@ -21,9 +22,15 @@ type ErrorType = {
 // 一旦ベースはこれで。オプションは追加していく。
 export const fetchGet = async <T, U>({
   tableName,
+  match,
   options
 }: FetchGetType<T>): Promise<{ data: U[]; error: ErrorType }> => {
   let query: PostgrestFilterBuilder<T> = supabase.from<T>(tableName).select();
+
+  if (!!match) {
+    query = query.match(match);
+  }
+
   if (!!options && !!options.order)
     query = query.order(options.order.column, {
       ascending: options.order.ascending
