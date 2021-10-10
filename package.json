@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3002 && lint",
-    "build": "next build",
+    "build": "next build && find ./out -name *.map -delete",
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
