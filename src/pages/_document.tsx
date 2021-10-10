@@ -15,8 +15,6 @@ export default class Document extends NextDocument {
           />
         </Head>
         <body>
-          <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-          <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
