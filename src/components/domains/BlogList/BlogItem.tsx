@@ -28,13 +28,6 @@ export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
       <Flex flexDirection="column">
         <time className={styles.Timestamp}>{createdAt}</time>
       </Flex>
-      <button
-        onClick={() => {
-          throw new Error('hoge');
-        }}
-      >
-        click
-      </button>
     </article>
   );
 };
