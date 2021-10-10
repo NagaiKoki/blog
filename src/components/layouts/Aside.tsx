@@ -1,12 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
 import { Text, Link, Flex } from '@chakra-ui/react';
 
 export const Aside = () => {
   return (
     <aside>
       <div className="Image__Wrapper">
-        <Image
+        <img
           src="/kokiImage.png"
           width="60"
           height="60"
