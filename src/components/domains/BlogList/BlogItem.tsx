@@ -24,6 +24,7 @@ export const BlogListItem: React.VFC<Props> = ({ id, title, createdAt }) => {
         >
           {title}
         </Heading>
+        <button onClick={() => new Error('hoge')}>click</button>
       </Link>
       <Flex flexDirection="column">
         <time className={styles.Timestamp}>{createdAt}</time>

@@ -1,5 +1,6 @@
 import { RecoilRoot } from 'recoil';
 import { ChakraProvider } from '@chakra-ui/react';
+import { ErrorBoundary } from '@sentry/nextjs';
 import '@fontsource/merriweather';
 
 import theme from '@config/theme';
@@ -14,7 +15,9 @@ const MyApp = ({ Component, pageProps }) => {
         <ChakraProvider theme={theme}>
           <div className="Container">
             <Header />
-            <Component {...pageProps} />
+            <ErrorBoundary fallback={<p>sorry... something went wrong 🤑</p>}>
+              <Component {...pageProps} />
+            </ErrorBoundary>
             <Footer />
           </div>
           <style jsx>{`
