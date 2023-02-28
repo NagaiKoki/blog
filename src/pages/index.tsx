@@ -35,7 +35,7 @@ export default function Home(props: PostsQueryType) {
       </div>
       <style jsx>{`
         .Aside__Wrapper {
-          margin-top: 50px;
+          margin-top: 51px;
         }
         .List__Wrapper {
           padding-top: 40px;
