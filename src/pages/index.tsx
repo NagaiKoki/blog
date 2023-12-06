@@ -27,7 +27,7 @@ export default function Home(props: PostsQueryType) {
   return (
     <main>
       <Seo />
-      <div className="Aside__Wrapper">
+      <div className="Aside__Wrapper hoge3w">
         <Aside />
       </div>
       <div className="List__Wrapper">
