@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ErrorBoundary } from '@sentry/nextjs';
 import '@fontsource/merriweather';
 
 import theme from '@/config/theme';
@@ -12,9 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <ChakraProvider theme={theme}>
       <div className="Container">
         <Header />
-        <ErrorBoundary fallback={<p>sorry... something went wrong 🤑</p>}>
-          <Component {...pageProps} />
-        </ErrorBoundary>
+        <Component {...pageProps} />
         <Footer />
       </div>
       <style jsx>{`
