@@ -1,18 +1,14 @@
-import React from 'react';
 import { Heading } from '@chakra-ui/react';
-
-// entities
-import { Post } from '@models/entities/Post';
-// components
-import { MarkdownRenderer } from '@components/shared/Markdown/Renderer';
-// types
+import { MarkdownRenderer } from '@/components/shared/Markdown/Renderer';
 import styles from './articles.module.css';
 
 type Props = {
-  post: Post;
+  title: string;
+  content: string;
+  createdAt: string;
 };
 
-export const Article: React.FC<Props> = ({ post }) => {
+export const Article = ({ title, content, createdAt }: Props) => {
   return (
     <div>
       <header className={styles.Header}>
@@ -25,12 +21,12 @@ export const Article: React.FC<Props> = ({ post }) => {
           paddingBottom="10px"
           textColor="orange.400"
         >
-          {post.getTitle().value}
+          {title}
         </Heading>
-        <time className={styles.Timestamp}>{post.getCreatedAt().value}</time>
+        <time className={styles.Timestamp}>{createdAt}</time>
       </header>
       <div>
-        <MarkdownRenderer text={post.getContent().value} />
+        <MarkdownRenderer text={content} />
       </div>
     </div>
   );
