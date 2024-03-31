@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="Footer">
       <Link href="/">
         <Heading as="span" size="sm" colorScheme="whiteAlpha">
-          2021 Koky Tech
+          2024 Koky Tech
         </Heading>
       </Link>
       <style jsx>{`

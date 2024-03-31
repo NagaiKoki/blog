@@ -1,46 +1,32 @@
-import { Seo } from '@components/layouts/Seo';
-import { Aside } from '@components/layouts/Aside';
-import { BlogList } from '@components/domains/BlogList';
-import { PostsQueryType } from 'types/post';
-import { PostRepository } from '@repositories/posts';
-import { Post } from '@models/entities/Post';
+import { Seo } from '@/components/layouts/Seo';
+import { Aside } from '@/components/layouts/Aside';
+import { articleConfig } from '@/articles/config';
+import Link from 'next/link';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
-const repo = new PostRepository();
-
-export async function getStaticProps() {
-  const payload = await repo.fetchPosts();
-  return {
-    props: {
-      data: JSON.parse(JSON.stringify(payload))
-    }
-  };
-}
-
-export default function Home(props: PostsQueryType) {
-  const { data } = props;
-  const postEntities = data.map((post) => {
-    return Post.factory({
-      ...post
-    });
-  });
-
+export default function Home() {
   return (
     <main>
       <Seo />
-      <div className="Aside__Wrapper">
+      <Box marginTop="51px">
         <Aside />
-      </div>
-      <div className="List__Wrapper">
-        <BlogList posts={postEntities} />
-      </div>
-      <style jsx>{`
-        .Aside__Wrapper {
-          margin-top: 51px;
-        }
-        .List__Wrapper {
-          padding-top: 40px;
-        }
-      `}</style>
+      </Box>
+      <Flex marginTop="40px" flexDirection="column" gap="12px">
+        {Object.entries(articleConfig).map(([key, value]) => {
+          return (
+            <Link key={value.createdAt} href={`/posts/${key}`}>
+              <Text
+                as="span"
+                fontSize="16px"
+                textDecoration="underline"
+                whiteSpace="pre-wrap"
+              >
+                {`${value.createdAt}${'  -  '}${value.title}`}
+              </Text>
+            </Link>
+          );
+        })}
+      </Flex>
     </main>
   );
 }

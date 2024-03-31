@@ -9,6 +9,7 @@ export const Aside = () => {
           src="/kokiImage.png"
           width="60"
           height="60"
+          alt="koki nagai icon"
           className="Profile__Image"
         />
       </div>
