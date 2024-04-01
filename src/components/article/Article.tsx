@@ -1,19 +1,17 @@
-import React, { ReactNode } from 'react';
 import { Heading } from '@chakra-ui/react';
-
-// components
 import { Seo } from '@/components/layouts/Seo';
 import { Aside } from '@/components/layouts/Aside';
 import { TITLE } from '@/constants/title';
-import { Article } from '../domains/Articles';
+import { ArticleContent } from './ArticleContent/ArticleContent';
 import { articleConfig } from '@/articles/config';
+import styles from './article.module.css';
 
 type Props = {
   contentNumber: keyof typeof articleConfig;
   content: string;
 };
 
-export const ArticleLayout = ({ contentNumber, content }: Props) => {
+export const Article = ({ contentNumber, content }: Props) => {
   return (
     <main>
       <Seo
@@ -21,23 +19,18 @@ export const ArticleLayout = ({ contentNumber, content }: Props) => {
         description={content.substr(0, 130)}
       />
       <article>
-        <Article
+        <ArticleContent
           title={articleConfig[contentNumber].title}
           createdAt={articleConfig[contentNumber].createdAt}
           content={content}
         />
       </article>
-      <div className="Aside__Wrapper">
+      <div className={styles.Aside__Wrapper}>
         <Heading as="h3" size="lg" colorScheme="whiteAlpha" marginBottom="3">
           {TITLE}
         </Heading>
         <Aside />
       </div>
-      <style jsx>{`
-        .Aside__Wrapper {
-          margin-top: 90px;
-        }
-      `}</style>
     </main>
   );
 };

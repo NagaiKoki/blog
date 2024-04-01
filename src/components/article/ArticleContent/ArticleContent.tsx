@@ -1,6 +1,6 @@
 import { Heading } from '@chakra-ui/react';
-import { MarkdownRenderer } from '@/components/shared/Markdown/Renderer';
-import styles from './articles.module.css';
+import { MarkdownRenderer } from '@/components/markdown/Renderer';
+import styles from './articleContent.module.css';
 
 type Props = {
   title: string;
@@ -8,7 +8,7 @@ type Props = {
   createdAt: string;
 };
 
-export const Article = ({ title, content, createdAt }: Props) => {
+export const ArticleContent = ({ title, content, createdAt }: Props) => {
   return (
     <div>
       <header className={styles.Header}>

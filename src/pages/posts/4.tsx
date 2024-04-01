@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleLayout } from '@/components/layouts/ArticleLayout';
+import { Article } from '@/components/article/Article';
 import { GetStaticProps } from 'next';
 import { getContent } from '@/utils/getContent';
 
@@ -13,5 +13,5 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Component({ content }: { content: string }) {
-  return <ArticleLayout contentNumber={4} content={content} />;
+  return <Article contentNumber={4} content={content} />;
 }

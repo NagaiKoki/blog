@@ -7,15 +7,18 @@ export const Aside = () => {
       <div className="Image__Wrapper">
         <img
           src="/kokiImage.png"
-          width="60"
-          height="60"
+          width="80"
+          height="80"
           alt="koki nagai icon"
           className="Profile__Image"
         />
       </div>
       <div>
-        <Text fontSize="md" fontWeight="bold" padding="0">
-          Personal blog written by Koki Nagai
+        <Text fontSize="14px" fontWeight="bold" padding="0" marginBottom="8px">
+          Personal blog written by Koki Nagai.
+        </Text>
+        <Text fontSize="14px" fontWeight="bold" padding="0">
+          Currently work at TVer, Glasp
         </Text>
         <Flex paddingTop="10px">
           <Text fontSize="md" marginRight="10px" padding="0">
