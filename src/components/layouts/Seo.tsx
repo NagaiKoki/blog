@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const Seo: React.FC<Props> = ({ title, description }) => {
-  const TITLE = 'Koky Tech';
+  const TITLE = 'Koki Nagai Tech';
   const DEFAULT_DESCRIPTION = 'Mainly write about frontend dev matters';
 
   return (
