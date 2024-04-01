@@ -1,9 +1,10 @@
-import React from 'react';
-import { Article } from '@/components/article/Article';
 import { GetStaticProps } from 'next';
+import React from 'react';
+
+import { Article } from '@/components/article/Article';
 import { getContent } from '@/utils/getContent';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const content = getContent(3);
   return {
     props: {

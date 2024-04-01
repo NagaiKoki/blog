@@ -2,12 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 
-const addArticle = (id) => `import React from 'react';
-import { ArticleLayout } from '@/components/layouts/ArticleLayout';
-import { GetStaticProps } from 'next';
+const addArticle = (id) => `import { GetStaticProps } from 'next';
+import React from 'react';
+
+import { Article } from '@/components/article/Article';
 import { getContent } from '@/utils/getContent';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const content = getContent(${id});
   return {
     props: {
@@ -17,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Component({ content }: { content: string }) {
-  return <ArticleLayout contentNumber={${id}} content={content} />;
+  return <Article contentNumber={${id}} content={content} />;
 }`;
 
 const idArg = process.argv[2];
@@ -36,7 +37,6 @@ const main = () => {
 
   createPage(idArg);
 
-  // createPage();
   exec(`pnpm prettier --write ${targetPage}`, (err) => {
     if (err) {
       console.log(`format error`, err);

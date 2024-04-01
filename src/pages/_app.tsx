@@ -1,11 +1,12 @@
-import type { AppProps } from 'next/app';
-import { Analytics } from '@vercel/analytics/react';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Analytics } from '@vercel/analytics/react';
 import '@fontsource/merriweather';
 
-import theme from '@/config/theme';
-import { Header } from '@/components/layouts/Header';
 import { Footer } from '@/components/layouts/Footer';
+import { Header } from '@/components/layouts/Header';
+import theme from '@/config/theme';
+
+import type { AppProps } from 'next/app';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

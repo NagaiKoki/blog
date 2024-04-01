@@ -1,5 +1,7 @@
 import { Heading } from '@chakra-ui/react';
+
 import { MarkdownRenderer } from '@/components/markdown/Renderer';
+
 import styles from './articleContent.module.css';
 
 type Props = {

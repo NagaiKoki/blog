@@ -1,8 +1,9 @@
-import { Seo } from '@/components/layouts/Seo';
-import { Aside } from '@/components/layouts/Aside';
-import { articleConfig } from '@/articles/config';
-import Link from 'next/link';
 import { Box, Flex, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+
+import { articleConfig } from '@/articles/config';
+import { Aside } from '@/components/layouts/Aside';
+import { Seo } from '@/components/layouts/Seo';
 
 export default function Home() {
   return (

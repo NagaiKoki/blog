@@ -1,10 +1,12 @@
 import { Heading } from '@chakra-ui/react';
-import { Seo } from '@/components/layouts/Seo';
-import { Aside } from '@/components/layouts/Aside';
-import { TITLE } from '@/constants/title';
-import { ArticleContent } from './ArticleContent/ArticleContent';
+
 import { articleConfig } from '@/articles/config';
+import { Aside } from '@/components/layouts/Aside';
+import { Seo } from '@/components/layouts/Seo';
+import { TITLE } from '@/constants/title';
+
 import styles from './article.module.css';
+import { ArticleContent } from './ArticleContent/ArticleContent';
 
 type Props = {
   contentNumber: keyof typeof articleConfig;

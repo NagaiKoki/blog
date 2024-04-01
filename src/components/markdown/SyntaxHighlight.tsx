@@ -9,13 +9,15 @@ const CodeBlock = ({
   language: string;
   value: string;
 }) => {
-  let newCode = value;
+  const newCode = value;
+
   return (
     <SyntaxHighlighter
       language={language}
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       style={tomorrow}
-      wrapLines={true}
-      showLineNumbers={true}
+      wrapLines
+      showLineNumbers
     >
       {newCode || ''}
     </SyntaxHighlighter>
