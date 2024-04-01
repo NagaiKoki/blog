@@ -13,6 +13,11 @@ export const articleConfig = {
     contentPath: '/src/articles/3.md',
     title: 'Deep inside useRecoilState',
     createdAt: '2021/06/24'
+  },
+  4: {
+    contentPath: '/src/articles/4.md',
+    title: 'Blog reboot!',
+    createdAt: '2024/04/01'
   }
 } as const satisfies {
   [key in number]: {
