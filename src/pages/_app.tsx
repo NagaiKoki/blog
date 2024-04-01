@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/react';
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/merriweather';
 
@@ -12,6 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <div className="Container">
         <Header />
         <Component {...pageProps} />
+        <Analytics />
         <Footer />
       </div>
       <style jsx>{`
