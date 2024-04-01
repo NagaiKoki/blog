@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "format --write",
-    "format:check": "format --check",
+    "format": "prettier --write",
+    "format:check": "prettier --check",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "addPage": "node src/scripts/createArticlePage.js"
