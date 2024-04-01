@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: pnpm setup
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.15.4
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.18.2
+
+      - name: Run pnpm install
+        run: |
+          pnpm -r install --frozen-lockfile --strict-peer-dependencies
+
+      - name: Run Format
+        run: pnpm format:check
+
+      - name: Run Lint
+        run: pnpm lint
