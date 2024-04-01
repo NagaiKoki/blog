@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "format --write",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "addPage": "node src/scripts/createArticlePage.js"
   },
   "dependencies": {
     "@chakra-ui/color-mode": "^2.2.0",
