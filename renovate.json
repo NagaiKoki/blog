@@ -9,6 +9,10 @@
     {
       "matchDepTypes": ["pnpm"],
       "enabled": false
+    },
+    {
+      "matchDepTypes": ["node"],
+      "enabled": false
     }
   ]
 }
