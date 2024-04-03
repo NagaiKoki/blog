@@ -35,7 +35,7 @@
     "@storybook/addon-links": "^6.3.2",
     "@storybook/react": "^6.3.2",
     "@types/react": "^18.2.0",
-    "@types/react-syntax-highlighter": "^13.5.0",
+    "@types/react-syntax-highlighter": "^15.0.0",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
     "chromatic": "^5.9.2",
