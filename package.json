@@ -19,7 +19,6 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fontsource/merriweather": "^4.4.5",
-    "@supabase/supabase-js": "^1.23.0",
     "@vercel/analytics": "^1.2.2",
     "framer-motion": "^11.0.24",
     "next": "14.1.4",
@@ -30,10 +29,6 @@
     "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.3.2",
-    "@storybook/addon-essentials": "^6.3.2",
-    "@storybook/addon-links": "^6.3.2",
-    "@storybook/react": "^6.3.2",
     "@types/react": "^18.2.0",
     "@types/react-syntax-highlighter": "^15.0.0",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
