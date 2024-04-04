@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "tsc:check": "tsc --noEmit",
     "lint": "next lint",
     "format": "prettier --write",
     "format:check": "prettier --check",
@@ -29,6 +30,7 @@
     "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.12.4",
     "@types/react": "^18.2.0",
     "@types/react-syntax-highlighter": "^15.0.0",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
