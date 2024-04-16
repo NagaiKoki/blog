@@ -16,7 +16,7 @@ type Props = {
 export const Article = ({ title, content, createdAt }: Props) => {
   return (
     <main>
-      <Seo title={title} description={content.substr(0, 130)} />
+      <Seo title={title} />
       <article>
         <ArticleContent title={title} createdAt={createdAt} content={content} />
       </article>
