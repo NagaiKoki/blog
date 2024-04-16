@@ -22,7 +22,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           margin-right: auto;
           margin-left: auto;
           max-width: 45rem;
-          padding: 2.625rem 1.3125rem;
+          padding: 2.625rem 1rem;
         }
       `}</style>
     </ChakraProvider>

@@ -47,11 +47,11 @@ export const Header: React.VFC = () => {
           {TITLE}
         </Heading>
       </Link>
-      <Flex>
-        <Flex alignItems="center" marginRight="24px" gap={2}>
+      <Flex alignItems="center">
+        <Flex alignItems="center" marginRight="18px" gap={2}>
           <Button
             variant="ghost"
-            padding="2px 16px"
+            padding="2px 8px"
             height="32px"
             borderRadius="full"
             fontSize="sm"
@@ -63,7 +63,7 @@ export const Header: React.VFC = () => {
           <Text>/</Text>
           <Button
             variant="ghost"
-            padding="2px 16px"
+            padding="2px 8px"
             borderRadius="full"
             fontSize="sm"
             height="32px"
@@ -78,7 +78,7 @@ export const Header: React.VFC = () => {
           fontSize="30px"
           variant="goast"
           cursor="pointer"
-          paddingLeft="5px"
+          padding="0px 4px"
           onClick={toggleColorMode}
         >
           {colorMode === 'dark' ? '🌘' : '🌞'}
