@@ -6,7 +6,7 @@ import theme from '@/config/theme';
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" prefix="og: http://ogp.me/ns#">
         <Head>
           <link
             rel="icon"
