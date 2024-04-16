@@ -5,5 +5,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": false,
+    "editor.trimAutoWhitespace": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

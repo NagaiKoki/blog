@@ -13,6 +13,7 @@ export const MarkdownRenderer: React.FC<Props> = ({ text }) => {
     <div className="react-markdown">
       <ReactMarkdown
         includeNodeIndex
+        linkTarget="_blank"
         plugins={[gfm]}
         renderers={{ code: CodeBlock }}
       >
@@ -53,6 +54,10 @@ export const MarkdownRenderer: React.FC<Props> = ({ text }) => {
         }
         .react-markdown ul {
           padding-left: 40px;
+        }
+        .react-markdown a {
+          color: var(--chakra-colors-orange-400);
+          text-decoration: underline;
         }
       `}</style>
     </div>

@@ -13,20 +13,20 @@ export default function Home() {
         <Aside />
       </Box>
       <Flex marginTop="40px" flexDirection="column" gap="12px">
-        {Object.entries(articleConfig)
+        {Object.entries(articleConfig())
           .sort(([_, value], [__, value2]) =>
             value.createdAt > value2.createdAt ? -1 : 1
           )
           .map(([key, value]) => {
             return (
-              <Link key={value.createdAt} href={`/posts/${key}`}>
+              <Link key={value.createdAt} href={`/ja/${key}`}>
                 <Text
                   as="span"
                   fontSize="16px"
                   textDecoration="underline"
                   whiteSpace="pre-wrap"
                 >
-                  {`${value.createdAt}${'  -  '}${value.title}`}
+                  {`${value.createdAt}${'  -  '}${value.title.ja}`}
                 </Text>
               </Link>
             );
