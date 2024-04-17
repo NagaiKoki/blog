@@ -2,7 +2,7 @@ import { useColorMode } from '@chakra-ui/color-mode';
 import { Button, Flex, Heading, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { TITLE } from '@/constants/title';
 import { useLang } from '@/stores/useLang';
@@ -15,6 +15,15 @@ export const Header: React.VFC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { pathname, replace } = useRouter();
   const { lang: selectedLang, setLang } = useLang();
+
+  useEffect(() => {
+    if (enPattern.test(pathname) && selectedLang === 'ja') {
+      setLang('en');
+    } else if (jaPattern.test(pathname) && selectedLang === 'en') {
+      setLang('ja');
+    }
+    // eslint-disable-next-line
+  }, []);
 
   const handleOnChangeLang = useCallback(
     async (lang: Lang) => {
@@ -55,6 +64,12 @@ export const Header: React.VFC = () => {
             height="32px"
             borderRadius="full"
             fontSize="sm"
+            _hover={{
+              background: 'none'
+            }}
+            _focus={{
+              background: 'orange'
+            }}
             background={selectedLang === 'en' ? 'orange' : ''}
             onClick={() => handleOnChangeLang('en')}
           >
@@ -67,6 +82,12 @@ export const Header: React.VFC = () => {
             borderRadius="full"
             fontSize="sm"
             height="32px"
+            _hover={{
+              background: 'none'
+            }}
+            _focus={{
+              background: 'orange'
+            }}
             background={selectedLang === 'ja' ? 'orange' : ''}
             onClick={() => handleOnChangeLang('ja')}
           >
