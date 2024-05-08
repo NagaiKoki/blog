@@ -51,7 +51,7 @@ dependencies:
 devDependencies:
   '@types/node':
     specifier: ^20.12.4
-    version: 20.12.9
+    version: 20.12.11
   '@types/react':
     specifier: ^18.2.0
     version: 18.3.1
@@ -1595,8 +1595,8 @@ packages:
       '@types/unist': 2.0.10
     dev: false
 
-  /@types/node@20.12.9:
-    resolution: {integrity: sha512-o93r47yu04MHumPBCFg0bMPBMNgtMg3jzbhl7e68z50+BMHmRMGDJv13eBlUgOdc9i/uoJXGMGYLtJV4ReTXEg==}
+  /@types/node@20.12.11:
+    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
