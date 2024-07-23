@@ -28,7 +28,7 @@ dependencies:
     version: 11.3.9(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.8.0
-    version: 2.9.0(@types/react@18.3.3)(react@18.3.1)
+    version: 2.9.1(@types/react@18.3.3)(react@18.3.1)
   next:
     specifier: 14.2.5
     version: 14.2.5(react-dom@18.3.1)(react@18.3.1)
@@ -3673,8 +3673,8 @@ packages:
       '@pkgjs/parseargs': 0.11.0
     dev: true
 
-  /jotai@2.9.0(@types/react@18.3.3)(react@18.3.1):
-    resolution: {integrity: sha512-MioTpMvR78IGfJ+W8EwQj3kwTkb+u0reGnTyg3oJZMWK9rK9v8NBSC9Rhrg9jrrFYA6bGZtzJa96zsuAYF6W3w==}
+  /jotai@2.9.1(@types/react@18.3.3)(react@18.3.1):
+    resolution: {integrity: sha512-t4Q7FIqQB3N/1art4OcqdlEtPmQ2h4DNIzTFhvt06WE0kCpQ1QoG+1A1IGTaQBi2KdDRsnywj+ojmHHKgw6PDA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
