@@ -66,7 +66,7 @@ devDependencies:
     version: 7.18.0(eslint@8.57.0)(typescript@5.6.2)
   chromatic:
     specifier: ^11.0.0
-    version: 11.10.0
+    version: 11.10.1
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -2317,8 +2317,8 @@ packages:
     resolution: {integrity: sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==}
     dev: false
 
-  /chromatic@11.10.0:
-    resolution: {integrity: sha512-aHlrZn5kq5B2fsqFoO3aTgyxfUxGq3WIux5eoIWCEXzATTxEi9JTtpQumtWPRj14q3FbN2wWnRxyUoxko83oTg==}
+  /chromatic@11.10.1:
+    resolution: {integrity: sha512-lvVL9J1uCcQnIHYH03XNXftmLp4cKer2TfYnQ5iBrJqqtzI43SwBjIMkJ7y3s1Y62ZG2Z+p+1FBHOq4SF19EhA==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
