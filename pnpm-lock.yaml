@@ -10,7 +10,7 @@ dependencies:
     version: 2.2.0(react@18.3.1)
   '@chakra-ui/react':
     specifier: ^2.8.2
-    version: 2.10.1(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@types/react@18.3.11)(framer-motion@11.11.4)(react-dom@18.3.1)(react@18.3.1)
+    version: 2.10.1(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@types/react@18.3.11)(framer-motion@11.11.5)(react-dom@18.3.1)(react@18.3.1)
   '@emotion/react':
     specifier: ^11.11.4
     version: 11.13.3(@types/react@18.3.11)(react@18.3.1)
@@ -25,7 +25,7 @@ dependencies:
     version: 1.3.1(next@14.2.15)(react@18.3.1)
   framer-motion:
     specifier: ^11.0.24
-    version: 11.11.4(react-dom@18.3.1)(react@18.3.1)
+    version: 11.11.5(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.8.0
     version: 2.10.0(@types/react@18.3.11)(react@18.3.1)
@@ -238,7 +238,7 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@chakra-ui/react@2.10.1(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@types/react@18.3.11)(framer-motion@11.11.4)(react-dom@18.3.1)(react@18.3.1):
+  /@chakra-ui/react@2.10.1(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@types/react@18.3.11)(framer-motion@11.11.5)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-YUOPyuq6Z0P1TSURNQRccwV/YbiWlkHlRLEMqNMwFQeQe7lyXfkPHn8GZyxvaiu+S02iopG9xg+wl68K4G3FSQ==}
     peerDependencies:
       '@emotion/react': '>=11'
@@ -256,7 +256,7 @@ packages:
       '@popperjs/core': 2.11.8
       '@zag-js/focus-visible': 0.31.1
       aria-hidden: 1.2.4
-      framer-motion: 11.11.4(react-dom@18.3.1)(react@18.3.1)
+      framer-motion: 11.11.5(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-fast-compare: 3.2.2
@@ -2024,8 +2024,8 @@ packages:
     engines: {node: '>=0.4.x'}
     dev: false
 
-  /framer-motion@11.11.4(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-54UE9loF2ZBgyjdMmxzp9kxm0gvYjFfpd7GiThdCCp5+J0P4Oa7pM0yusd9Y3rm/EUAdD+FfgqRXfbK7k3RFiA==}
+  /framer-motion@11.11.5(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-kwnnxRe3fTQyTr90VMBlrjAvKxZhUWQnR2lXrpX98dPBBlOY+JiTqHhlHoyCJskMpyGpiXS84TL0moI/MsS/5Q==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
