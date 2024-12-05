@@ -1,7 +1,15 @@
-# Koky Tech Blog
+# [koki Nagai tech](https://kokinagai.com)
+
+My Personal blog based on following technology stacks.
 
 - Next.js(SSG)
-- SWR
-- Chakra
+- Chakra UI
 - TypeScript
-- Firestore
+- Vercel
+
+# Contributions Welcome!!
+
+```shell
+$ pnpm i
+$ pnpm dev
+```
