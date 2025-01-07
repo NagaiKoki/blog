@@ -19,7 +19,7 @@ dependencies:
     version: 11.14.0(@emotion/react@11.14.0)(@types/react@18.3.18)(react@18.3.1)
   '@fontsource/merriweather':
     specifier: ^5.0.0
-    version: 5.1.0
+    version: 5.1.1
   '@vercel/analytics':
     specifier: ^1.2.2
     version: 1.4.1(next@14.2.20)(react@18.3.1)
@@ -452,8 +452,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/merriweather@5.1.0:
-    resolution: {integrity: sha512-CliXFoCACKkrx8G93xGw6cD7RYCOytuY/Afe1W/htsRRlaSyGA6HGNQzQJc6NKzjs9XenBH2CcMQsONyppd+uQ==}
+  /@fontsource/merriweather@5.1.1:
+    resolution: {integrity: sha512-GaO8ZHDCQAuoPJh0yiLK+NzL03OnGs64uFGKFRSouinZ1CtoEtO+3DHr4LZokFW+Au5MvWr4Am2MOhjdyvIRyA==}
     dev: false
 
   /@humanwhocodes/config-array@0.13.0:
