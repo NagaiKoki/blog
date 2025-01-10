@@ -1,0 +1,48 @@
+{
+  "name": "koki-nagai-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "tsc:check": "tsc --noEmit",
+    "lint": "next lint",
+    "format": "prettier --write",
+    "format:check": "prettier --check",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "addPage": "node src/scripts/createArticlePage.js"
+  },
+  "dependencies": {
+    "@chakra-ui/color-mode": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/merriweather": "^5.0.0",
+    "@vercel/analytics": "^1.2.2",
+    "framer-motion": "^11.0.24",
+    "next": "14.2.23",
+    "jotai": "^2.8.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-markdown": "^5.0.3",
+    "react-syntax-highlighter": "^15.4.3",
+    "remark-gfm": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.4",
+    "@types/react": "^18.2.0",
+    "@types/react-syntax-highlighter": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "chromatic": "^11.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
+  },
+  "packageManager": "pnpm@8.15.9"
+}
