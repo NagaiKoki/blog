@@ -1,9 +1,0 @@
-.Blog__Item {
-  cursor: pointer;
-}
-.Blog__Item:hover {
-  opacity: 0.8;
-}
-.Timestamp {
-  font-size: 14px;
-}
